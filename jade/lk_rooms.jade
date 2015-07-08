@@ -23,14 +23,11 @@ block content
 					table.table__table
 						tbody
 							tr.table__line
-								th.table__head-title Дата
 								th.table__head-title Квартира/Комната
-								th.table__head-title Стоимость
+								th.table__head-title Дата
 								th.table__head-title Просмотров
 								th.table__head-title
 							tr.table__line
-								td.table__item._date
-									p.table__date с 15.04.2015<br>по 14.05.2015
 								td.table__item._room
 									img.table__img(src="img/content/table_img.jpg", alt="")
 									p.table__title Стильная, 3х комнатная квартира возле центра
@@ -38,31 +35,14 @@ block content
 										a.table__button._hide(href="#") Скрыть
 										a.table__button._edit(href="#") Редактировать
 										a.table__button._del(href="#") Удалить
-								td.table__item._cost
-									p.table__text 100 грн.
+								td.table__item._date
+									p.table__date Активно до:<br>15.04.2015
+									a.table__link(href="#") Продлить
 								td.table__item._view
 									p.table__text 500025
 								td.table__item._button
 									button.button._sizeM Продвигать
 							tr.table__line
-								td.table__item._date
-									p.table__date с 15.04.2015<br>по 14.05.2015
-								td.table__item._room
-									img.table__img(src="img/not_foto.png", alt="")
-									p.table__title Стильная, 3х комнатная квартира возле центра
-									.table__buttons
-										a.table__button._hide(href="#") Скрыть
-										a.table__button._edit(href="#") Редактировать
-										a.table__button._del(href="#") Удалить
-								td.table__item._cost
-									p.table__text 100 грн.
-								td.table__item._view
-									p.table__text 123
-								td.table__item._button
-									button.button._sizeM Продвигать
-							tr.table__line
-								td.table__item._date
-									p.table__date с 15.04.2015<br>по 14.05.2015
 								td.table__item._room
 									img.table__img(src="img/content/table_img.jpg", alt="")
 									p.table__title Стильная, 3х комнатная квартира возле центра
@@ -70,15 +50,29 @@ block content
 										a.table__button._hide(href="#") Скрыть
 										a.table__button._edit(href="#") Редактировать
 										a.table__button._del(href="#") Удалить
-								td.table__item._cost
-									p.table__text 100 грн.
+								td.table__item._date
+									p.table__date Активно до:<br>15.04.2015
+									a.table__link(href="#") Продлить
 								td.table__item._view
-									p.table__text 500025
+									p.table__text 0
 								td.table__item._button
 									button.button._sizeM Продвигать
 							tr.table__line
+								td.table__item._room
+									img.table__img(src="img/content/table_img.jpg", alt="")
+									p.table__title Стильная, 3х комнатная квартира возле центра
+									.table__buttons
+										a.table__button._hide(href="#") Скрыть
+										a.table__button._edit(href="#") Редактировать
+										a.table__button._del(href="#") Удалить
 								td.table__item._date
-									p.table__date с 15.04.2015<br>по 14.05.2015
+									p.table__date Активно до:<br>15.04.2015
+									a.table__link(href="#") Продлить
+								td.table__item._view
+									p.table__text 1
+								td.table__item._button
+									button.button._sizeM Продвигать
+							tr.table__line
 								td.table__item._room
 									img.table__img(src="img/not_foto.png", alt="")
 									p.table__title Стильная, 3х комнатная квартира возле центра
@@ -86,13 +80,14 @@ block content
 										a.table__button._hide(href="#") Скрыть
 										a.table__button._edit(href="#") Редактировать
 										a.table__button._del(href="#") Удалить
-								td.table__item._cost
-									p.table__text 100 грн.
+								td.table__item._date
+									p.table__date Активно до:<br>15.04.2015
+									a.table__link(href="#") Продлить
 								td.table__item._view
-									p.table__text 123
+									p.table__text 500025
 								td.table__item._button
 									button.button._sizeM Продвигать
-					a.table__link(href="#") Добавить квартиру
+					a.button._green(href="#") Добавить квартиру
 				.univ__block-title
 					h2.univ__subtitle._sizeL Не активные
 						span.univ__subnumber (0)
@@ -101,8 +96,7 @@ block content
 						tbody
 							tr.table__line
 								th.table__head-title Квартира/Комната
-								th.table__head-title Стоимость
-								th.table__head-title Просмотров
+								th.table__head-title Дата
 								th.table__head-title
 							tr.table__line
 								td.table__item._room
@@ -112,11 +106,9 @@ block content
 										a.table__button._hide(href="#") Скрыть
 										a.table__button._edit(href="#") Редактировать
 										a.table__button._del(href="#") Удалить
-								td.table__item._cost
-									p.table__text 100 грн.
-								td.table__item._view
-									p.table__text 123
-								td.table__item._b-large
+								td.table__item._date
+									a.table__link(href="#") Продлить
+								td.table__item._button-large
 									button.button._sizeM Оплатить размещение
 	.description__block
 		.container-fluid

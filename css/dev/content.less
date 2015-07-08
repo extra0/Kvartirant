@@ -699,6 +699,19 @@
 			top: 0;
 		}
 	}
+	&._green {
+		background: #6aa434;
+		box-shadow: 3px 3px 0 #496212;
+		margin-top: 20px;
+		color: #fff;
+		font-family: @main_font;
+		&:active {
+			box-shadow: none;
+		}
+		&:hover {
+			background: #77b73a;
+		}
+	}
 }
 
 // выпадающее меню поиск
@@ -2356,7 +2369,7 @@
 }
 .table {
 	&__block {
-		margin-bottom: 35px;
+		margin-bottom: 75px;
 	}
 	&__head-title {
 		font-size: 12px;
@@ -2372,6 +2385,7 @@
 	&__date {
 		font-size: 12px;
 		color: #383949;
+		margin: 0 0 -5px 0;
 	}
 	&__img {
 		float: left;
@@ -2432,11 +2446,12 @@
 	&__item {
 		padding: 13px 0;
 		&._date {width: 11%;}
-		&._room {width: 54%;}
+		&._room {width: 44%;}
 		&._cost {width: 10%;}
 		&._view {width: 8%;}
 		&._button {width: 16%;text-align: right;}
 		&._b-large {width: 29%;text-align: right;}
+		&._button-large {width: 25%;text-align: right;}
 	}
 	&__line {
 		border-bottom: 2px solid #f5f5f5;
@@ -2447,13 +2462,12 @@
 		line-height: 14px;
 	}
 	&__link {
-		font-size: 16px;
+		font-size: 12px;
 		color: #00a5d2;
 		display: inline-block;
 		border-bottom: 1px solid;
-		line-height: 16px;
+		line-height: 14px;
 		font-family: 'Fira Light';
-		margin: 20px 0;
 		text-decoration: none;
 		&:hover {
 			border-bottom: 1px solid transparent;
