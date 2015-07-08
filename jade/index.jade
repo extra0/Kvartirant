@@ -1,0 +1,88 @@
+extends _layout
+block content
+	.advantages__block
+		.container-fluid
+			h2.advantages__title Снимайте жилье посуточно в 2 раза быстрее, чем вы привыкли!
+			ul.advantages__list.list-inline
+				li.advantages__item
+					img.advantages__image(src="img/coin.png", alt="")
+					p.advantages__text Лучшие ценовые предложения. Стоимость регулируются под любой бюджет
+				li.advantages__item
+					img.advantages__image(src="img/people.png", alt="")
+					p.advantages__text Посещаемость нашего сайта составляет около 10 тыс. просмотров в день
+				li.advantages__item
+					img.advantages__image(src="img/calendar.png", alt="")
+					p.advantages__text Календарь загруженности для возможности подобрать свободные варианты жилья
+	include dropmenu
+	.category__block
+		.container-fluid
+			.category__wrapper
+				a.category__item(href="#")
+					img.category__image(src="img/content/cat1.jpg", alt="")
+					.category__text-block
+						h3.category__item-title Выходные для пары
+						p.category__text во Львове
+				a.category__item(href="#")
+					img.category__image(src="img/content/cat2.jpg", alt="")
+					.category__text-block
+						h3.category__item-title В самом центре столицы
+						p.category__text в Киеве
+				a.category__item(href="#")
+					img.category__image(src="img/content/cat3.jpg", alt="")
+					.category__text-block
+						h3.category__item-title Для семьи рядом с морем
+						p.category__text в Одессе
+	.enable-today__block
+		.container-fluid
+			h3.enable-today__title Доступно сегодня в вашем городе:
+			.enable-today__wrap
+				a.enable-today__item(href="#")
+					div.enable-today__inner
+						img.enable-today__image(src="img/content/today1.jpg", alt="")
+						p.enable-today__price 280 грн
+					h3.enable-today__name Презентабельная квартира, центр ул. Саксаганского 19
+					div.enable-today__detail
+						span.enable-today__attr._bed 2 кровати
+						span.enable-today__attr._person 4 гостя
+						span.enable-today__attr._feedback 27 отзывов
+				a.enable-today__item(href="#")
+					div.enable-today__inner
+						img.enable-today__image(src="img/content/today1.jpg", alt="")
+						p.enable-today__price 80 грн
+					h3.enable-today__name Презентабельная квартира
+					div.enable-today__detail
+						span.enable-today__attr._bed 2 кровати
+						span.enable-today__attr._person 4 гостя
+						span.enable-today__attr._feedback 27 отзывов
+				a.enable-today__item(href="#")
+					div.enable-today__inner
+						img.enable-today__image(src="img/content/today1.jpg", alt="")
+						p.enable-today__price 2280 грн
+					h3.enable-today__name Презентабельная квартира, центр ул. Саксаганского 19
+					div.enable-today__detail
+						span.enable-today__attr._bed 2 кровати
+						span.enable-today__attr._person 4 гостя
+						span.enable-today__attr._feedback 27 отзывов
+				a.enable-today__item._vip(href="#")
+					div.enable-today__inner
+						img.enable-today__image(src="img/content/today1.jpg", alt="")
+						p.enable-today__price 280 грн
+					h3.enable-today__name Презентабельная квартира, центр ул. Саксаганского 19
+					div.enable-today__detail
+						span.enable-today__attr._bed 2 кровати
+						span.enable-today__attr._person 4 гостя
+						span.enable-today__attr._feedback 27 отзывов
+			.text-center
+				p.extra__item и еще 
+					a.extra__number(href="#") 2391 предложение
+					|  от 
+					span.extra__cost 142 грн
+	.description__block
+		.container-fluid
+			.social__widgets
+				div#vk_groups
+				.fb-page(data-href="https://www.facebook.com/facebook" data-width="276" data-height="271" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true")
+			.description__inner
+				h1.description__title <strong>КВАРТИРАНТ</strong> - сайт №1 в Украине в сфере посуточной аренды жилья. 
+				p.description__text Здесь Вы можете найти и забронировать нужную вам квартиру в разных уголках Украины напрямую от владельцев с их прямыми контактными данными. Без посредников, без комиссии, без проблем!
+				p.description__follow Следите за нами в соцсетях

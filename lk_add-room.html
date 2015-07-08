@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta description="">
+    <meta keywords="">
+    <link rel="shortcut icon" type="images/vnd.microsoft.icon" href="favicon.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="screen">
+    <script src="js/jquery.js"></script>
+    <script src="//vk.com/js/api/openapi.js?116"></script>
+    <script src="//connect.facebook.net/ru_RU/sdk.js#xfbml=1&amp;version=v2.3"></script>
+    <!-- Подключаем только там, где есть яндекс карта-->
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <!---->
+    <script src="js/plugins.js"></script>
+    <!-- подключить только на странице комнаты-->
+    <script src="js/room_plugins.js"></script>
+    <!---->
+    <script src="js/script.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div id="enter">
+      <div class="modal__header"><a href="#" class="modal__close">Закрыть окно</a>
+        <h3 class="modal__title">Вход на сайт</h3><a href="#" class="modal__registration">Регистрация</a>
+        <p class="modal__text">Заполните поля если вы уже проходили регистрацию на сайте. </p>
+      </div>
+      <div class="modal__inner">
+        <form class="modal__form">
+          <label for="email" class="modal__label">Ваш  e-mail:</label>
+          <input id="email" type="email" required class="modal__input">
+          <label for="password" class="modal__label">Ваш  пароль:</label>
+          <input id="password" type="password" required class="modal__input">
+          <div class="modal__remember">
+            <input id="remember" type="checkbox" class="modal__checkbox">
+            <label for="remember" class="modal__check-label">Запомнить меня</label><a href="#" class="modal__remember-link">Напомнить пароль/Логин</a>
+          </div>
+          <button type="submit" class="button">Войти</button>
+          <div class="m-social__block">
+            <p class="m-social__title">Вход через соц.сети:</p><a href="#" class="m-social__link _vk"></a><a href="#" class="m-social__link _fb"></a>
+          </div><a href="#" class="modal__resolution">Условия предоставления услуг</a>
+        </form>
+      </div>
+    </div>
+    <div class="main-wrapper">
+      <header class="header">
+        <div class="container-fluid">
+          <div class="enter__block"><a href="#" class="enter__link _withImg"> <img src="img/content/cat1.jpg" alt="" class="enter__img"><span class="enter__name">Иван</span></a><a href="#" class="enter__rent">Сдать квартиру</a>
+          </div><a href="/" class="header__logo"><img src="img/logo.png" alt="Site Logo"></a>
+          <div class="number__block"><span class="number__text">На сайте</span><span class="number__num-aparts">12222</span><span id="room" class="number__text">квартира </span><span class="number__text"> в </span><span class="number__text _light">46 городах </span><span class="number__text">Украины</span></div>
+          <div class="current__block"><a href="#" class="current__item active">₴</a><a href="#" class="current__item">€</a><a href="#" class="current__item">$</a></div>
+        </div>
+      </header>
+      <div class="search-main__block">
+        <form action="#" method="get" class="search-main__form">
+          <div class="container-fluid">
+            <div class="search-main__select-block">
+              <select data-placeholder="Город" name="city" class="search-main__select-city select">
+                <option value=""></option>
+                <option value="Харьков">Харьков</option>
+                <option value="Донецк">Донецк</option>
+                <option value="Мариуполь">Мариуполь</option>
+                <option value="Ивано-Франковск">Ивано-Франковск</option>
+                <option value="Днепродзержинск">Днепродзержинск</option>
+              </select>
+              <select data-placeholder="Район/метро" name="area" disabled class="search-main__select-area select">
+                <option value=""></option>
+                <option value="Метро">Метро</option>
+                <option value="Район">Район</option>
+              </select>
+            </div>
+            <div class="search-main__datepicker-block">
+              <input type="text" class="search-main__date"><span class="search-main__line"></span>
+              <input type="text" class="search-main__date">
+            </div>
+            <div class="search-main__cost-block">
+              <input type="text" maxlength="5" class="search-main__price"><span class="search-main__line _left"></span>
+              <input type="text" maxlength="5" class="search-main__price _margin"><span class="search-main__text">грн</span>
+            </div>
+            <div class="search-main__show-wrap"><a href="#" class="search-main__show"> <span class="search-main__border">Скрыть параметры</span></a><span class="search-main__arrow _bottom"></span></div>
+            <button type="submit" class="button _main-search">Найти</button>
+          </div>
+          <div class="settings__block">
+            <div class="container-fluid">
+              <div class="settings__inner">
+                <p class="settings__title">Тип жилья:</p>
+                <ul class="settings__list list-inline">
+                  <li class="settings__item">
+                    <input id="room" type="checkbox" class="settings__input">
+                    <label for="room" class="settings__label">Комната</label>
+                  </li>
+                  <li class="settings__item">
+                    <input id="apart" type="checkbox" class="settings__input">
+                    <label for="apart" class="settings__label">Квартира</label>
+                  </li>
+                  <li class="settings__item">
+                    <input id="house" type="checkbox" class="settings__input">
+                    <label for="house" class="settings__label">Дом</label>
+                  </li>
+                  <li class="settings__item">
+                    <input id="penthouse" type="checkbox" class="settings__input">
+                    <label for="penthouse" class="settings__label">Пентхаус</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="settings__inner _absolute">
+                <p class="settings__title">Вместимость:</p>
+                <select name="guests" class="settings__select select">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="3">30</option>
+                </select><span class="settings__text">гостя</span>
+              </div>
+              <div class="settings__inner">
+                <p class="settings__title">Удобства:</p>
+                <ul class="settings__list list-inline">
+                  <li class="settings__item _width">
+                    <input id="bedroom" type="checkbox" class="settings__input">
+                    <label for="bedroom" class="settings__label _size-m">Туалетные пренадл.</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="kichen" type="checkbox" class="settings__input">
+                    <label for="kichen" class="settings__label _size-m">Кухня</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="gas" type="checkbox" class="settings__input">
+                    <label for="gas" class="settings__label _size-m">Газовая плита</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="balkon" type="checkbox" class="settings__input">
+                    <label for="balkon" class="settings__label _size-m">Терасса/Балкон</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="smoke" type="checkbox" class="settings__input">
+                    <label for="smoke" class="settings__label _size-m">Датчик дыма</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="fen" type="checkbox" class="settings__input">
+                    <label for="fen" class="settings__label _size-m">Фен</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="parking" type="checkbox" class="settings__input">
+                    <label for="parking" class="settings__label _size-m">Бесплатная парковка</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="armor" type="checkbox" class="settings__input">
+                    <label for="armor" class="settings__label _size-m">Бронированная дверь</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="wifi" type="checkbox" class="settings__input">
+                    <label for="wifi" class="settings__label _size-m">Интернет/Wi-fi</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="djakuzi" type="checkbox" class="settings__input">
+                    <label for="djakuzi" class="settings__label _size-m">Джакузи</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="tv" type="checkbox" class="settings__input">
+                    <label for="tv" class="settings__label _size-m">Телевизор</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="conditioner" type="checkbox" class="settings__input">
+                    <label for="conditioner" class="settings__label _size-m">Кондиционер</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="dryer" type="checkbox" class="settings__input">
+                    <label for="dryer" class="settings__label _size-m">Сушильная машина</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="kamin" type="checkbox" class="settings__input">
+                    <label for="kamin" class="settings__label _size-m">Камин</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="fitnes" type="checkbox" class="settings__input">
+                    <label for="fitnes" class="settings__label _size-m">Спортзал</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="heating" type="checkbox" class="settings__input">
+                    <label for="heating" class="settings__label _size-m">Отопление</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="wash" type="checkbox" class="settings__input">
+                    <label for="wash" class="settings__label _size-m">Стиральная машина</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="catv" type="checkbox" class="settings__input">
+                    <label for="catv" class="settings__label _size-m">Кабельное телевидение</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="domofon" type="checkbox" class="settings__input">
+                    <label for="domofon" class="settings__label _size-m">Домофон</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="extinguisher" type="checkbox" class="settings__input">
+                    <label for="extinguisher" class="settings__label _size-m">Огнетушитель</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="lift" type="checkbox" class="settings__input">
+                    <label for="lift" class="settings__label _size-m">Лифт</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="medic" type="checkbox" class="settings__input">
+                    <label for="medic" class="settings__label _size-m">Аптечка</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="breakfast" type="checkbox" class="settings__input">
+                    <label for="breakfast" class="settings__label _size-m">Завтрак</label>
+                  </li>
+                  <li class="settings__item _width">
+                    <input id="pool" type="checkbox" class="settings__input">
+                    <label for="pool" class="settings__label _size-m">Бассейн</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="settings__inner _width">
+                <p class="settings__title">Правила:</p>
+                <ul class="settings__list list-inline">
+                  <li class="settings__item _noimg">
+                    <input id="docs" type="checkbox" class="settings__input _noimg">
+                    <label for="docs" class="settings__label _size-m _noimg">Отчетные документы </label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="animals" type="checkbox" class="settings__input _noimg">
+                    <label for="animals" class="settings__label _size-m _noimg">Можно с питомцами</label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="transfer" type="checkbox" class="settings__input _noimg">
+                    <label for="transfer" class="settings__label _size-m _noimg">Трансфер</label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="transfer2" type="checkbox" class="settings__input _noimg">
+                    <label for="transfer2" class="settings__label _size-m _noimg">Трансфер</label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="cart" type="checkbox" class="settings__input _noimg">
+                    <label for="cart" class="settings__label _size-m _noimg">Оплата картой</label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="nocash" type="checkbox" class="settings__input _noimg">
+                    <label for="nocash" class="settings__label _size-m _noimg">Без предоплаты</label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="allday" type="checkbox" class="settings__input _noimg">
+                    <label for="allday" class="settings__label _size-m _noimg">Круглосуточное поселение</label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="allday2" type="checkbox" class="settings__input _noimg">
+                    <label for="allday2" class="settings__label _size-m _noimg">Круглосуточное поселение</label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="smoke" type="checkbox" class="settings__input _noimg">
+                    <label for="smoke" class="settings__label _size-m _noimg">Можно курить </label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="nogift" type="checkbox" class="settings__input _noimg">
+                    <label for="nogift" class="settings__label _size-m _noimg">Без залога</label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="pay" type="checkbox" class="settings__input _noimg">
+                    <label for="pay" class="settings__label _size-m _noimg">Оплата на расчетный счет</label>
+                  </li>
+                  <li class="settings__item _noimg">
+                    <input id="pay2" type="checkbox" class="settings__input _noimg">
+                    <label for="pay2" class="settings__label _size-m _noimg">Оплата на расчетный счет</label>
+                  </li>
+                </ul>
+              </div>
+              <button type="submit" class="button _absolute">Найти</button>
+            </div>
+          </div>
+        </form>
+        <div class="text-center"><a href="#" class="search-main__detail-search">Расширенный поиск</a></div>
+      </div>
+      <div class="univ__block">
+        <div class="container-fluid">
+          <div class="sidebar">
+            <ul class="sidebar__menu-list">
+              <li class="sidebar__menu-item"><a href="#" class="sidebar__link">Мои квартиры</a></li>
+              <li class="sidebar__menu-item"><a href="#" class="sidebar__link active">Профиль</a></li>
+              <li class="sidebar__menu-item"><a href="#" class="sidebar__link">Выйти</a></li>
+            </ul>
+            <div class="sidebar__description">
+              <p class="sidebar__description-title">С чего начать</p>
+              <p class="sidebar__text">Проект Квартир появился в 2008 году, когда два дизайнера приняли у себя дома троих путешественников. Сейчас миллионы хозяев и гостей создают бесплатные аккаунты на Квартиранте, чтобы сдать или забронировать уникальное жилье по всему миру.</p>
+            </div>
+          </div>
+          <div class="univ__inner">
+            <h1 class="univ__title _margb">Сдайте свое жилье уже сейчас</h1>
+            <p class="univ__text">Заполните формы о вашем сдаваемом жилье или что-то такое по тексту</p>
+            <div class="univ__block-title">
+              <h2 class="univ__subtitle _sizeL">Описание</h2>
+              <p class="univ__subtitle-text">Опишите ваше жильё в общем</p>
+            </div>
+            <form class="tab__form">
+              <label for="lk_title" class="tab__label">Заголовок объявления:</label>
+              <input id="lk_title" maxlength="70" type="text" data-field="item" required class="tab__input _width">
+              <p class="counter _title"><span data-field="target">70</span> знаков осталось</p>
+              <label for="room_descr" class="tab__label">Общее описание жилья:</label>
+              <textarea id="room_descr" maxlength="545" data-field="item_2" class="tab__textarea _width"></textarea>
+              <p class="counter _descr"><span data-field="target_2">545</span> знаков осталось</p>
+              <div class="univ__block-title _margt">
+                <h2 class="univ__subtitle _sizeL">Данные о квартире</h2>
+                <p class="univ__subtitle-text">Выберите тип Вашего жилья</p>
+              </div>
+              <label class="tab__label">Тип жилья:</label>
+              <ul class="room__type-list list-inline">
+                <li class="room__type-item">
+                  <input id="type_room" type="radio" name="house_type" checked class="room__type-input _radio">
+                  <label for="type_room" class="room__type-label">Отдельная комната<img src="img/bed_radio.png" alt="" class="room__type-img _room"></label>
+                </li>
+                <li class="room__type-item">
+                  <input id="type__apart" type="radio" name="house_type" class="room__type-input _radio">
+                  <label for="type__apart" class="room__type-label">Квартира<img src="img/apart_radio.png" alt="" class="room__type-img _apart"></label>
+                </li>
+                <li class="room__type-item">
+                  <input id="type__house" type="radio" name="house_type" class="room__type-input _radio">
+                  <label for="type__house" class="room__type-label">Дом<img src="img/house_radio.png" alt="" class="room__type-img _house"></label>
+                </li>
+                <li class="room__type-item">
+                  <input id="type__penthouse" type="radio" name="house_type" class="room__type-input _radio">
+                  <label for="type__penthouse" class="room__type-label">Пентхаус<img src="img/pent_radio.png" alt="" class="room__type-img _pent"></label>
+                </li>
+              </ul>
+              <div class="tab__input-wrap _margr _widthS">
+                <label for="room_descr" class="tab__label">Вместимость жилья:</label>
+                <select class="tab__select _widthS select">
+                  <option value="1">1 </option>
+                  <option value="3">2 </option>
+                  <option value="4">3</option>
+                  <option value="44">44</option>
+                  <option value="11">55</option>
+                </select>
+              </div>
+              <div class="tab__input-wrap">
+                <label for="room_descr" class="tab__label">Стоимость (за 1 сутки):</label>
+                <input type="text" maxlength="5" class="tab__input price">
+              </div>
+              <label class="tab__label">В квартире есть:</label>
+              <ul class="inner__list list-inline">
+                <li class="inner__item">
+                  <input id="option_1" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/fen.png" alt="" class="inner__img"></div>
+                  <label for="option_1" class="inner__label">Фен</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_2" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/cooking.png" alt="" class="inner__img"></div>
+                  <label for="option_2" class="inner__label">Персональное меню в кафе</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_3" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/wifi.png" alt="" class="inner__img"></div>
+                  <label for="option_3" class="inner__label">Беспроводной интернет</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_4" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/door.png" alt="" class="inner__img"></div>
+                  <label for="option_4" class="inner__label">Бронированная дверь</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_5" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/parking.png" alt="" class="inner__img"></div>
+                  <label for="option_5" class="inner__label">Парковочное место на охраняемой стоянке</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_6" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/acc.png" alt="" class="inner__img"></div>
+                  <label for="option_6" class="inner__label">Банные принадлежности</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_1" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/fen.png" alt="" class="inner__img"></div>
+                  <label for="option_1" class="inner__label">Фен</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_2" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/cooking.png" alt="" class="inner__img"></div>
+                  <label for="option_2" class="inner__label">Персональное меню в кафе</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_3" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/wifi.png" alt="" class="inner__img"></div>
+                  <label for="option_3" class="inner__label">Беспроводной интернет</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_4" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/door.png" alt="" class="inner__img"></div>
+                  <label for="option_4" class="inner__label">Бронированная дверь</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_5" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/parking.png" alt="" class="inner__img"></div>
+                  <label for="option_5" class="inner__label">Парковочное место на охраняемой стоянке</label>
+                </li>
+                <li class="inner__item">
+                  <input id="option_6" type="checkbox" class="modal__checkbox">
+                  <div class="inner__img-wrap"><img src="img/acc.png" alt="" class="inner__img"></div>
+                  <label for="option_6" class="inner__label">Банные принадлежности</label>
+                </li>
+              </ul>
+              <label class="tab__label">Правила проживания:</label>
+              <div class="tab__input-wrap _db">
+                <p class="tab__mini-text">Время заселения:</p>
+                <select class="tab__select _widthM select">
+                  <option value="12:00">12:00 </option>
+                  <option value="00:00">12:20</option>
+                  <option value="01:22">11:00</option>
+                  <option value="12:20">12:20</option>
+                  <option value="11:00">12:20</option>
+                </select>
+              </div>
+              <div class="tab__input-wrap _db">
+                <p class="tab__mini-text">Время выселения:</p>
+                <select class="tab__select _widthM select">
+                  <option value="12:00">12:00 </option>
+                  <option value="00:00">12:20</option>
+                  <option value="01:22">11:00</option>
+                  <option value="12:20">12:20</option>
+                  <option value="11:00">12:20</option>
+                </select><span class="tab__text _dib">Следующего дня</span>
+              </div>
+              <label for="pay_now" class="tab__mini-text">Предоплата:</label>
+              <input id="pay_now" type="text" class="tab__input _width">
+              <p for="pay_now" class="tab__mini-text">Залог:</p>
+              <input id="sure" type="radio" name="zalog" checked class="room__type-input _radio">
+              <label for="sure" class="tab__label _sizeM">Обязательный</label>
+              <input id="not_sure" type="radio" name="zalog" class="room__type-input _radio">
+              <label for="not_sure" class="tab__label _sizeM">Не обязательный</label>
+              <label for="keys" class="tab__mini-text">Где можно получить ключи от апартаментов:</label>
+              <input id="keys" type="text" class="tab__input _width">
+              <p for="pay_now" class="tab__mini-text">Круглосуточное поселение:</p>
+              <input id="hourly_yes" type="radio" name="hourly" checked class="room__type-input _radio">
+              <label for="hourly_yes" class="tab__label _sizeM">Да</label>
+              <input id="hourly_no" type="radio" name="hourly" class="room__type-input _radio">
+              <label for="hourly_no" class="tab__label _sizeM">Нет</label>
+              <p for="pay_now" class="tab__mini-text">Оплата карта/наличные:</p>
+              <input id="cash_yes" type="radio" name="cash" checked class="room__type-input _radio">
+              <label for="cash_yes" class="tab__label _sizeM">Да</label>
+              <input id="cash_no" type="radio" name="cash" class="room__type-input _radio">
+              <label for="cash_no" class="tab__label _sizeM">Нет</label>
+              <label for="age" class="tab__mini-text">Возрастное ограничение:</label>
+              <input id="age" type="text" class="tab__input _width">
+              <div class="univ__block-title">
+                <h2 class="univ__subtitle _sizeL">Календарь занятости</h2>
+                <p class="univ__subtitle-text">Проставьте даты когда жилье занято, эти даты для пользователя буду не доступны</p>
+              </div>
+              <div class="calendar__slider _full"></div>
+              <div class="univ__block-title">
+                <h2 class="univ__subtitle _sizeL">Место нахождение объекта</h2>
+                <p class="univ__subtitle-text">Город, улица, адрес, что рядом, карта</p>
+              </div>
+              <div class="tab__input-wrap">
+                <label class="tab__label">Область:</label>
+                <select class="tab__select _widthL select">
+                  <option value="Киевская область">Киевская область</option>
+                  <option value="Киевская область">Киевская область</option>
+                  <option value="Киевская область">Киевская область</option>
+                  <option value="Киевская область">Киевская область</option>
+                  <option value="Киевская область">Киевская область</option>
+                </select>
+                <label class="tab__label">Город:</label>
+                <select class="tab__select _widthL select">
+                  <option value="Киев">Киев</option>
+                  <option value="Донецк">Донецк</option>
+                  <option value="Валуйки">Валуйки</option>
+                  <option value="Крыжопль">Крыжопль</option>
+                  <option value="Лас-Вегас">Лас-Вегас</option>
+                </select>
+                <label class="tab__label">Район:</label>
+                <select class="tab__select _widthL select">
+                  <option value="Приморский">Приморский</option>
+                  <option value="Донецк">Донецк</option>
+                  <option value="Валуйки">Валуйки</option>
+                  <option value="Крыжопль">Крыжопль</option>
+                  <option value="Лас-Вегас">Лас-Вегас</option>
+                </select>
+                <label class="tab__label">Метро:</label>
+                <select class="tab__select _widthL select">
+                  <option value="Центральное">Центральное</option>
+                  <option value="Донецк">Донецк</option>
+                  <option value="Валуйки">Валуйки</option>
+                  <option value="Крыжопль">Крыжопль</option>
+                  <option value="Лас-Вегас">Лас-Вегас</option>
+                </select>
+                <label for="address" class="tab__label">Адрес:</label>
+                <input id="address" type="text" class="tab__input _widthfull">
+                <label for="near" class="tab__label">Что есть рядом:</label>
+                <input id="near" type="text" class="tab__input _widthfull">
+              </div>
+              <div class="tab__input-wrap _widthHalf">
+                <div class="map__dragger">
+                  <div id="dragger_map"></div>
+                  <div id="marker"></div>
+                </div>
+                <p class="tab__text _border"><span class="tab__text-border">Вы можете перещать поинтер и указать точное местонахождение объекта</span></p><a href="#" class="button _gray">Добавить</a>
+              </div>
+              <div class="tag__block">
+                <p class="tag__item">Продукты 24<span class="tag__delete"></span></p>
+                <p class="tag__item">Дельфинарий<span class="tag__delete"></span></p>
+              </div>
+              <div class="univ__block-title">
+                <h2 class="univ__subtitle _sizeL">Загрузить фото вашего жилья</h2>
+                <p class="univ__subtitle-text">Допустимые форматы: jpeg/jpg, png. Макс. размер файла 2 мб</p>
+              </div>
+              <div class="avatar__block">
+                <div class="avatar__link-img _width"><img src="img/content/img1.jpg" alt="" class="avatar__img"><a href="#" class="avatar__delete"></a>
+                  <p class="avatar__text">Главная</p>
+                </div>
+                <div class="avatar__link-img _width"><img src="img/content/img2.jpg" alt="" class="avatar__img"><a href="#" class="avatar__delete"></a>
+                  <p class="avatar__text"><a href="#" class="avatar__change-main">Сделать главной</a></p>
+                </div>
+                <input type="file" data-placeholder="Загрузить ещё" data-browse=" " class="avatar__input _file _marg">
+                <div class="clear"></div>
+              </div>
+              <div class="univ__block-title">
+                <h2 class="univ__subtitle _sizeL">Продвижение Вашего объявления</h2>
+                <p class="univ__subtitle-text">Вы можете сделать его ещё более эффективнее и выделить на фоне обычных</p>
+              </div>
+              <div class="object__block _vip"><img src="img/vip_obj.png" alt="" class="object__img">
+                <h3 class="object__title">VIP размещение</h3>
+                <p class="object__text">В общем каталоге Ваше объявление будет выделено специальной рамкой</p>
+                <div class="object__select _vip">
+                  <input id="vip" type="radio" name="obj" checked class="object__input _radio">
+                  <label for="vip" class="object__label">Vip на 30 дней | <span class="object__price"> 250 грн</span></label>
+                </div>
+              </div>
+              <div class="object__block"><img src="img/not_vip_obj.png" alt="" class="object__img">
+                <h3 class="object__title">Обычное размещение</h3>
+                <p class="object__text">Стандартное объявление без каких-либо отличий от остальных</p>
+                <div class="object__select">
+                  <input id="not_vip" type="radio" name="obj" class="object__input _radio">
+                  <label for="not_vip" class="object__label">30 дней | <span class="object__price">Бесплатно</span></label>
+                </div>
+              </div>
+              <p class="tab__text _marg">Узнать больше о  <a href="#" class="tab__link">продвижении объявлений</a></p>
+              <button type="submit" class="button">Опубликовать</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="description__block">
+        <div class="container-fluid">
+          <div class="social__widgets">
+            <div id="vk_groups"></div>
+            <div data-href="https://www.facebook.com/facebook" data-width="276" data-height="271" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true" class="fb-page"></div>
+          </div>
+          <div class="description__inner">
+            <h1 class="description__title"><strong>КВАРТИРАНТ</strong> - сайт №1 в Украине в сфере посуточной аренды жилья. </h1>
+            <p class="description__text">Здесь Вы можете найти и забронировать нужную вам квартиру в разных уголках Украины напрямую от владельцев с их прямыми контактными данными. Без посредников, без комиссии, без проблем!</p>
+            <p class="description__follow">Следите за нами в соцсетях</p>
+          </div>
+        </div>
+      </div>
+      <div class="buffer"></div>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="footer__block-links"><a href="#" class="footer__link">О проекте</a><a href="#" class="footer__link">Условия сотрудничества</a><a href="#" class="footer__link">Справка</a></div>
+        <div class="copyright__block">
+          <p class="copyright__text">© 2015 Квартирант - посуточная аренда</p>
+          <p class="copyright__develop">Разработка сайта - студия <a href="www.studio-maximus.com" class="copyright__link">“Максимус”</a></p>
+        </div>
+        <div class="social__block"><a href="#" class="social__link _fb"></a><a href="#" class="social__link _goog"></a><a href="#" class="social__link _vk"></a><a href="#" class="social__link _tw"></a><a href="#" class="social__link _in"></a><a href="#" class="social__link _youtube"></a><a href="#" class="social__link _inst"></a></div>
+      </div>
+    </footer>
+  </body>
+</html>

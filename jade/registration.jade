@@ -1,0 +1,45 @@
+extends _layout
+block content
+	include dropmenu
+	.univ__block
+		.container-fluid
+			.sidebar
+				p.sidebar__strong Вы так же можете зайти на сайт используя  соц.сеть:
+				a.m-social__link._vk._sidebar(href="#")
+				a.m-social__link._fb._sidebar(href="#")
+			.univ__inner
+				.univ__block-title
+					h2.univ__title Регистрационная форма 
+					p.univ__text._sizeL Заполните поля заявки на регистрацию в системе.
+					p.univ__text._red Все поля являются обязательными для заполнения.
+				form.tab__form
+					label.tab__label(for="feed_name") Ваше имя на сайте:
+					input.tab__input#feed_name(type="text" required)
+					br
+					.tab__input-wrap._margr
+						label.tab__label(for="feed_phone") Телефон:
+						input.tab__input.mask_first#feed_phone(type="tel" placeholder="+38 " required)
+						span.tab__line
+						input.tab__input.mask_last(type="tel" required)
+					.tab__input-wrap
+						label.tab__label(for="feed_email") E-mail:
+						input.tab__input#feed_email(type="email" required)
+					label.tab__label(for="reg_pass") Пароль:
+					input.tab__input#reg_pass(type="password" required)
+					.captcha__block
+						span.captcha__text Введите число с картинки:
+						img.captcha__img(src="img/code.jpg", alt="")
+						input.tab__input._captcha(type="text" required)
+					input.modal__checkbox#agree(type="checkbox")
+					label.modal__check-label._width(for="agree") Я соглашаюсь с 
+						a.modal__resolution._marg(href="#") условиями сотрудничества
+					button.button(type="submit") Зарегистрироваться
+	.description__block
+		.container-fluid
+			.social__widgets
+				div#vk_groups
+				.fb-page(data-href="https://www.facebook.com/facebook" data-width="276" data-height="271" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true")
+			.description__inner
+				h1.description__title <strong>КВАРТИРАНТ</strong> - сайт №1 в Украине в сфере посуточной аренды жилья. 
+				p.description__text Здесь Вы можете найти и забронировать нужную вам квартиру в разных уголках Украины напрямую от владельцев с их прямыми контактными данными. Без посредников, без комиссии, без проблем!
+				p.description__follow Следите за нами в соцсетях

@@ -1,0 +1,46 @@
+extends _layout
+block content
+	include dropmenu
+	.univ__block
+		.container-fluid
+			.univ__inner
+				h1.univ__title О квартиранте
+				p.univ__text Сервис Квартирант начал свою работу в августе 2015 года в Киеве. 
+				.univ__blockquote
+					h2.univ__subtitle._dib Квартирант - 
+					span.univ__b-text  это безопасная и надежная площадка, на которой можно сдать, найти и забронировать уникальное жилье в любой точке мира прямо на сайте или с помощью мобильного устройства или планшета.
+				p.univ__text Квартирант – самый легкий путь для людей заработать деньги, сдавая свободное пространство и предлагая его миллионам людей. Сервис Квартирант начал свою работу в августе 2015 года в Киеве.:
+				ul.univ__list
+					li.univ__item Будь то квартира на одну ночь, замок на неделю или вилла на месяц, Квартирант дарит людям 
+					li.univ__item Уникальные впечатления от путешествий, по любой цене, в более чем 34 000 городах и 190 странах. 
+					li.univ__item Прибавьте к этому глобальную службу поддержки и стремительно растущее сообщество. 
+				p.univ__text Квартирант – самый легкий путь для людей заработать деньги, сдавая свободное пространство и предлагая его миллионам людей.
+				h2.univ__subtitle Квартирант это всегда - гарантии!
+				p.univ__text Это значит, что на данный момент актуальные предложения о сдаче жилья посуточно в данном городе пока отсутствуют.
+				.write__block
+					h2.univ__subtitle Напишите нам:
+					br
+					form.tab__form
+						label.tab__label(for="feed_name") Ваше имя:
+						input.tab__input#feed_name(type="text" required)
+						br
+						.tab__input-wrap._margr
+							label.tab__label(for="feed_phone") Телефон:
+							input.tab__input.mask_first#feed_phone(type="tel" placeholder="+38 " required)
+							span.tab__line
+							input.tab__input.mask_last(type="tel" required)
+						.tab__input-wrap
+							label.tab__label(for="feed_email") E-mail:
+							input.tab__input#feed_email(type="email" required)
+						label.tab__label Текст сообщения:
+							textarea.tab__textarea
+						button.button(type="submit") Отправить
+	.description__block
+		.container-fluid
+			.social__widgets
+				div#vk_groups
+				.fb-page(data-href="https://www.facebook.com/facebook" data-width="276" data-height="271" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true")
+			.description__inner
+				h1.description__title <strong>КВАРТИРАНТ</strong> - сайт №1 в Украине в сфере посуточной аренды жилья. 
+				p.description__text Здесь Вы можете найти и забронировать нужную вам квартиру в разных уголках Украины напрямую от владельцев с их прямыми контактными данными. Без посредников, без комиссии, без проблем!
+				p.description__follow Следите за нами в соцсетях

@@ -1,0 +1,22 @@
+#enter
+	.modal__header
+		a.modal__close(href="#") Закрыть окно
+		h3.modal__title Вход на сайт
+		a.modal__registration(href="#") Регистрация
+		p.modal__text Заполните поля если вы уже проходили регистрацию на сайте. 
+	.modal__inner
+		form.modal__form
+			label.modal__label(for="email") Ваш  e-mail:
+			input.modal__input#email(type="email" required)
+			label.modal__label(for="password") Ваш  пароль:
+			input.modal__input#password(type="password" required)
+			.modal__remember
+				input.modal__checkbox#remember(type="checkbox")
+				label.modal__check-label(for="remember") Запомнить меня
+				a.modal__remember-link(href="#") Напомнить пароль/Логин
+			button.button(type="submit") Войти
+			.m-social__block
+				p.m-social__title Вход через соц.сети:
+				a.m-social__link._vk(href="#")
+				a.m-social__link._fb(href="#")
+			a.modal__resolution(href="#") Условия предоставления услуг

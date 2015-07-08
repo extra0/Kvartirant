@@ -1,0 +1,81 @@
+extends _layout
+block content
+	include dropmenu
+	.univ__block
+		.container-fluid
+			.sidebar
+				ul.sidebar__menu-list
+					li.sidebar__menu-item
+						a.sidebar__link(href="#") Мои квартиры
+					li.sidebar__menu-item
+						a.sidebar__link.active(href="#") Профиль
+					li.sidebar__menu-item
+						a.sidebar__link(href="#") Выйти
+				.sidebar__description
+					p.sidebar__description-title С чего начать
+					p.sidebar__text Проект Квартир появился в 2008 году, когда два дизайнера приняли у себя дома троих путешественников. Сейчас миллионы хозяев и гостей создают бесплатные аккаунты на Квартиранте, чтобы сдать или забронировать уникальное жилье по всему миру.
+			.univ__inner
+				h1.univ__title._margb Ваш профиль
+				.univ__block-title
+					h2.univ__subtitle._sizeL Конактные данные
+				form.tab__form
+					.tab__input-wrap._margr
+						label.tab__label(for="lk_name") Имя
+						input.tab__input#lk_name(type="txt" required)
+					.tab__input-wrap
+						label.tab__label(for="lk_sername") Фамилия
+						input.tab__input#lk_sername(type="text" required)
+					.tab__input-wrap
+						label.tab__label(for="feed_email") E-mail:
+						input.tab__input#feed_email(type="email" required)
+					input.modal__checkbox#see_all(type="checkbox")
+					label.modal__check-label(for="see_all") Виден всем
+					br
+					.tab__input-wrap._margr
+						label.tab__label(for="feed_phone") Телефон:
+						input.tab__input.mask_first#feed_phone(type="tel" placeholder="+38 " required)
+						span.tab__line
+						input.tab__input.mask_last(type="tel" required)
+					br
+					a.tab__add-number(href="#") Добавить ещё номер
+					label.tab__label Информация о Вас:
+						p.tab__label-text Необязательно, но было бы интересно и распологает к себе
+						textarea.tab__textarea
+					.univ__block-title._margt
+						h2.univ__subtitle._sizeL Фото вашего профиля
+						p.univ__subtitle-text Ваша аватарка. Допустимые форматы: jpeg/jpg, png. Макс. размер файла до 2 мб
+					.avatar__block
+						.avatar__link-img
+							img.avatar__img(src="img/content/avatar.jpg", alt="")
+							a.avatar__delete(href="#")
+						p.avatar__title Изменить аватарку:
+						input.avatar__input._file(type="file" data-placeholder="Выберите файл" data-browse=" ")
+						.clear
+					.univ__block-title
+						h2.univ__subtitle._sizeL._dib Подтвердите свои данные
+						span.room__verify._intext.not-verify Личность не подтверждена
+						p.univ__subtitle-text Отправте скан/копии документов удостостовирящие вашу личность (паспорт или водителькое удостовирение)
+					h3.univ__subtitle Подтвердите свою личность:
+					p.univ__text._sizeM Для того что бы подтвердить свою личность Вам необходимо выслать нам документ подтверждающий вашу личность. Это делается для для актуализации данных. Мы не передаём их 3им лицам и ен вкоем случаем не будем брать кредиты на ваши документы, а так же использовать их в корысных целях. подробней в 
+						a.univ__link(href="#") условиях предоставления ресурса.
+					.loading__block
+						input.loading__input._file(type="file" data-placeholder="Загрузить документ(ы)" data-browse=" ")
+						p.loading__text._float Вы можете загрузить файлы форматов: 
+							span.loading__strong jpeg/jpg, png, pdf, doc, rtf, djvu, bmp. 
+							| Размером 
+							span.loading__strong до 2 мб
+						.loading__yet
+							p.univ__text Загружено:
+								a.loading__link._black(href="#") pasport.jpeg,
+								| 256 kb
+								span.close._marg
+					button.button(type="submit") Сохранить изменения
+	.description__block
+		.container-fluid
+			.social__widgets
+				div#vk_groups
+				.fb-page(data-href="https://www.facebook.com/facebook" data-width="276" data-height="271" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true")
+			.description__inner
+				h1.description__title <strong>КВАРТИРАНТ</strong> - сайт №1 в Украине в сфере посуточной аренды жилья. 
+				p.description__text Здесь Вы можете найти и забронировать нужную вам квартиру в разных уголках Украины напрямую от владельцев с их прямыми контактными данными. Без посредников, без комиссии, без проблем!
+				p.description__follow Следите за нами в соцсетях

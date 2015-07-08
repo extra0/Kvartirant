@@ -1,0 +1,129 @@
+extends _layout
+block content
+	include dropmenu
+	.univ__block
+		.container-fluid
+			.sidebar
+				ul.sidebar__menu-list
+					li.sidebar__menu-item
+						a.sidebar__link.active(href="#") Мои квартиры
+					li.sidebar__menu-item
+						a.sidebar__link(href="#") Профиль
+					li.sidebar__menu-item
+						a.sidebar__link(href="#") Выйти
+				.sidebar__description
+					p.sidebar__description-title С чего начать
+					p.sidebar__text Проект Квартир появился в 2008 году, когда два дизайнера приняли у себя дома троих путешественников. Сейчас миллионы хозяев и гостей создают бесплатные аккаунты на Квартиранте, чтобы сдать или забронировать уникальное жилье по всему миру.
+			.univ__inner
+				h1.univ__title._margb Мои квартиры
+				.univ__block-title
+					h2.univ__subtitle._sizeL Опубликованые
+						span.univ__subnumber (5)
+				.table__block
+					table.table__table
+						tbody
+							tr.table__line
+								th.table__head-title Дата
+								th.table__head-title Квартира/Комната
+								th.table__head-title Стоимость
+								th.table__head-title Просмотров
+								th.table__head-title
+							tr.table__line
+								td.table__item._date
+									p.table__date с 15.04.2015<br>по 14.05.2015
+								td.table__item._room
+									img.table__img(src="img/content/table_img.jpg", alt="")
+									p.table__title Стильная, 3х комнатная квартира возле центра
+									.table__buttons
+										a.table__button._hide(href="#") Скрыть
+										a.table__button._edit(href="#") Редактировать
+										a.table__button._del(href="#") Удалить
+								td.table__item._cost
+									p.table__text 100 грн.
+								td.table__item._view
+									p.table__text 500025
+								td.table__item._button
+									button.button._sizeM Продвигать
+							tr.table__line
+								td.table__item._date
+									p.table__date с 15.04.2015<br>по 14.05.2015
+								td.table__item._room
+									img.table__img(src="img/not_foto.png", alt="")
+									p.table__title Стильная, 3х комнатная квартира возле центра
+									.table__buttons
+										a.table__button._hide(href="#") Скрыть
+										a.table__button._edit(href="#") Редактировать
+										a.table__button._del(href="#") Удалить
+								td.table__item._cost
+									p.table__text 100 грн.
+								td.table__item._view
+									p.table__text 123
+								td.table__item._button
+									button.button._sizeM Продвигать
+							tr.table__line
+								td.table__item._date
+									p.table__date с 15.04.2015<br>по 14.05.2015
+								td.table__item._room
+									img.table__img(src="img/content/table_img.jpg", alt="")
+									p.table__title Стильная, 3х комнатная квартира возле центра
+									.table__buttons
+										a.table__button._hide(href="#") Скрыть
+										a.table__button._edit(href="#") Редактировать
+										a.table__button._del(href="#") Удалить
+								td.table__item._cost
+									p.table__text 100 грн.
+								td.table__item._view
+									p.table__text 500025
+								td.table__item._button
+									button.button._sizeM Продвигать
+							tr.table__line
+								td.table__item._date
+									p.table__date с 15.04.2015<br>по 14.05.2015
+								td.table__item._room
+									img.table__img(src="img/not_foto.png", alt="")
+									p.table__title Стильная, 3х комнатная квартира возле центра
+									.table__buttons
+										a.table__button._hide(href="#") Скрыть
+										a.table__button._edit(href="#") Редактировать
+										a.table__button._del(href="#") Удалить
+								td.table__item._cost
+									p.table__text 100 грн.
+								td.table__item._view
+									p.table__text 123
+								td.table__item._button
+									button.button._sizeM Продвигать
+					a.table__link(href="#") Добавить квартиру
+				.univ__block-title
+					h2.univ__subtitle._sizeL Не активные
+						span.univ__subnumber (0)
+				.table__block
+					table.table__table
+						tbody
+							tr.table__line
+								th.table__head-title Квартира/Комната
+								th.table__head-title Стоимость
+								th.table__head-title Просмотров
+								th.table__head-title
+							tr.table__line
+								td.table__item._room
+									img.table__img(src="img/not_foto.png", alt="")
+									p.table__title Стильная, 3х комнатная квартира возле центра
+									.table__buttons
+										a.table__button._hide(href="#") Скрыть
+										a.table__button._edit(href="#") Редактировать
+										a.table__button._del(href="#") Удалить
+								td.table__item._cost
+									p.table__text 100 грн.
+								td.table__item._view
+									p.table__text 123
+								td.table__item._b-large
+									button.button._sizeM Оплатить размещение
+	.description__block
+		.container-fluid
+			.social__widgets
+				div#vk_groups
+				.fb-page(data-href="https://www.facebook.com/facebook" data-width="276" data-height="271" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true")
+			.description__inner
+				h1.description__title <strong>КВАРТИРАНТ</strong> - сайт №1 в Украине в сфере посуточной аренды жилья. 
+				p.description__text Здесь Вы можете найти и забронировать нужную вам квартиру в разных уголках Украины напрямую от владельцев с их прямыми контактными данными. Без посредников, без комиссии, без проблем!
+				p.description__follow Следите за нами в соцсетях

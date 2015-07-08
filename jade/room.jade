@@ -1,0 +1,334 @@
+extends _layout
+block content
+	include dropmenu
+	.room__block
+		.container-fluid
+			.room__info
+				.room__info-header
+					.room__price-wrap
+						span.room__price <i class="room__currency">$</i>350
+					.room__period-wrap
+						span.room__period за сутки
+				.room__info-body
+					a(href="#")
+						img.room__avatar(src="img/content/cat1.jpg", alt="")
+					a.room__name(href="#") Иван Макаров
+					p.room__verify Личность подтверждена
+					p.room__person-info На сайте с янв. 2015
+					p.room__person-info Разместил 1 объявление
+					p.room__attention Если вам понравилось жилье,<br>свяжитесь с владельцем:
+					p.room__number +38 09x xxx xxxx
+					a.room__show-number(href="#") Показать телефон
+					br
+					a.room__write-letter(href="#") Написать сообщение
+					p.room__feedback Люди оставили 
+						a.room__feedback-number(href="#") 41 отзыв
+					p.room__rating-title Средняя оценка:
+					span.room__rating-number 3,8
+					.room__rating-block
+						span.room__rating-stars 
+				.room__info-footer
+					span.room__share-text Поделиться:
+					a.room__share-link._vk(href="#")
+					a.room__share-link._fb(href="#")
+					a.room__share-link._tw(href="#")
+			.room__slider
+				.slider-for
+					div.slide__block
+						img.slide__img(src="img/content/slide.jpg", alt="")
+					div.slide__block
+						img.slide__img(src="img/content/cat2.jpg", alt="")
+					div.slide__block
+						img.slide__img(src="img/content/slide.jpg", alt="")
+					div.slide__block
+						img.slide__img(src="img/content/cat3.jpg", alt="")
+				.slider-nav
+					div.slide-nav__block
+						img.slide-nav__img(src="img/content/slide.jpg", alt="")
+					div.slide-nav__block
+						img.slide-nav__img(src="img/content/cat2.jpg", alt="")
+					div.slide-nav__block
+						img.slide-nav__img(src="img/content/slide.jpg", alt="")
+					div.slide-nav__block
+						img.slide-nav__img(src="img/content/cat3.jpg", alt="")
+			.room__inner
+				h1.room__title Отличная комната в стильной квартире в центре города
+				a.room__address(href="#") ул. Генуэзская, 87
+				a.room__tag(href="#") Киев
+				a.room__tag(href="#") Киевская область
+				ul.room__list.list-inline
+					li.room__item
+						img.room__item-image(src="img/bed.png", alt="")
+						span.room__item-text Отдельная комната
+					li.room__item
+						img.room__item-image(src="img/room_people.png", alt="")
+						span.room__item-text Максимум 3 гостя
+					li.room__item
+						img.room__item-image(src="img/bed_2.png", alt="")
+						span.room__item-text 3 кровати
+	.room__description
+		.container-fluid
+			h2.title Описание
+			.room__description-block
+				p.room__description-text Отличная двухкомнатная квартира студия в самом сердце Одессы, на пересечении улиц Дерибасовской и Екатериненской.
+				p.room__description-text В квартире есть вся необходимая мебель и бытовая техника: кондиционер, плазменный телевизор, WI-FI, микроволновая печь, стиральная машинка. В квартире возможно размещение до 5 человек. Во дворе парковка для авто, закрытая территория, ведется видео наблюдение. Отчетные документы. В квартире возможно размещение до 5 человек. Во дворе парковка для авто, закрытая территория, ведется видео наблюдение. Отчетные документы. В квартире есть вся необходимая мебель и бытовая техника: кондиционер, плазменный телевизор, WI-FI, микроволновая печь, стиральная машинка. В квартире возможно размещение до 5 человек. Во дворе парковка для авто, закрытая территория, ведется видео наблюдение. Отчетные документы. В квартире возможно размещение до 5 человек. Во дворе парковка для авто, закрытая территория, ведется видео наблюдение. Отчетные документы.
+			button.button._transparent._more-text Больше
+	.inset__block
+		.container-fluid
+			h2.title В квартире есть
+			ul.inset__list.list-inline
+				li.inset__item._no
+					img.inset__img(src="img/fen.png", alt="")
+					span.inset__text Фен
+				li.inset__item
+					img.inset__img(src="img/cooking.png", alt="")
+					span.inset__text Персональное меню в кафе
+				li.inset__item._no
+					img.inset__img(src="img/wifi.png", alt="")
+					span.inset__text Беспроводной интернет
+				li.inset__item
+					img.inset__img(src="img/door.png", alt="")
+					span.inset__text Бронированная дверь
+				li.inset__item._no
+					img.inset__img(src="img/parking.png", alt="")
+					span.inset__text Парковочное место на охраняемой стоянке
+				li.inset__item
+					img.inset__img(src="img/acc.png", alt="")
+					span.inset__text Банные принадлежности
+				li.inset__item._no
+					img.inset__img(src="img/wifi.png", alt="")
+					span.inset__text Беспроводной интернет
+				li.inset__item
+					img.inset__img(src="img/door.png", alt="")
+					span.inset__text Бронированная дверь
+				li.inset__item
+					img.inset__img(src="img/parking.png", alt="")
+					span.inset__text Парковочное место на охраняемой стоянке
+				li.inset__item
+					img.inset__img(src="img/acc.png", alt="")
+					span.inset__text Банные принадлежности
+				li.inset__item
+					img.inset__img(src="img/acc.png", alt="")
+					span.inset__text Банные принадлежности
+				li.inset__item._no
+					img.inset__img(src="img/wifi.png", alt="")
+					span.inset__text Беспроводной интернет
+				li.inset__item
+					img.inset__img(src="img/door.png", alt="")
+					span.inset__text Бронированная дверь
+				li.inset__item
+					img.inset__img(src="img/parking.png", alt="")
+					span.inset__text Парковочное место на охраняемой стоянке
+				li.inset__item
+					img.inset__img(src="img/acc.png", alt="")
+					span.inset__text Банные принадлежности
+	.rules__block
+		.container-fluid
+			h2.title Правила проживания
+			.rules__list
+				p.rules__important Залог обязателен
+				p.rules__text Время заселения: 
+					strong 12:00
+				p.rules__text Время выселения: 
+					strong 11:00
+				p.rules__text Предоплата: 
+					strong Требуется, в размере стоимости первых суток проживания
+				p.rules__text Залог: 
+					strong Да, оговаривается дополнительно 
+				p.rules__text Где можно получить ключи от апартаментов: 
+					strong В квартире 
+				p.rules__text Круглосуточное поселение: 
+					strong Да
+				p.rules__text Оплата карта/наличные: 
+					strong Только наличные
+	.calendar__block
+		.container-fluid
+			h2.title Календарь занятости
+			.calendar__overlay
+			.calendar__slider
+	.room__map
+		script.
+			$(document).ready(function(){
+				var myMap;
+				ymaps.ready(init);
+				function init() {
+				myMap = new ymaps.Map('map', {
+					center: [55.76, 37.64],
+					zoom: 10,
+					controls: ['zoomControl']
+				});
+				myMap.behaviors.disable('scrollZoom');
+				}
+			});
+		#map
+	.location__block
+		.container-fluid
+			h2.title Расположение
+			.location__inner
+				p.location__address ул. Жуляны, 24В
+					a.location__link(href="#") Киев
+					a.location__link(href="#") Киевская область
+					p.location__extra Район: 
+						a.location__extra-link(href="#") Приморский
+					p.location__extra Метро: 
+						a.location__extra-link(href="#") Центральная
+					p.location__near
+						span.location__near-title Рядом есть: 
+						| Пляж Малибу, Бар Меркурий, Тенисный корт, Аэропорт
+	.feedback__block
+		.container-fluid
+			div#tabs
+				ul.tab__list
+					li.tab__item
+						a.tab__link(href="#feedback") Отзывы
+							span.tab__number (41)
+					li.tab__item
+						a.tab__link(href="#leave_feedback") Оставить отзыв
+				div.tab__block#feedback
+					.tab__all-feedback
+						h3.tab__title Оценка квартиры:
+						span.room__rating-number 3,8
+						.room__rating-block
+							span.room__rating-stars
+						p.tab__on-base На основе 41 отзывов
+						ul.rating__list.list-inline
+							li.rating__item
+								span.rating__title Соответствие фото:
+								.room__rating-block
+									span.room__rating-stars
+								span.rating__number
+									span.rating__strong 4
+									| /5
+							li.rating__item
+								span.rating__title Расположение:
+								.room__rating-block
+									span.room__rating-stars
+								span.rating__number
+									span.rating__strong 5
+									| /5
+							li.rating__item
+								span.rating__title Чистота:
+								.room__rating-block
+									span.room__rating-stars
+								span.rating__number
+									span.rating__strong 5
+									| /5
+							li.rating__item
+								span.rating__title Цена\качество:
+								.room__rating-block
+									span.room__rating-stars
+								span.rating__number
+									span.rating__strong 5
+									| /5
+							li.rating__item
+								span.rating__title Сервис:
+								.room__rating-block
+									span.room__rating-stars
+								span.rating__number
+									span.rating__strong 0
+									| /5
+					.autor__block
+						.autor__name Шелдон
+							.room__rating-block._small
+								span.room__rating-stars._small
+						p.autor__date 15 августа 2012	
+						p.autor__text Пишу по свежим следам. Квартира соответствует описанию, подлинные фотографии, многофункциональная, имеет все необходимое для проживания, потрясающий вид из террасы.
+					.autor__block
+						.autor__name Скарлет
+							.room__rating-block._small
+								span.room__rating-stars._small
+						p.autor__date 15 августа 2012	
+						p.autor__text Отличная квартира, красивая и комфортная. Все что написана в описании полностью соответствует действительности. Так же спасибо Алексею и Сергею, приятные и доброжелательные люди, умеющие создавать атмосферу и лучший комфорт для своих гостей!
+					.autor__block
+						.autor__name Мухамед
+							.room__rating-block._small
+								span.room__rating-stars._small
+						p.autor__date 15 августа 2012	
+						p.autor__text Отличная квартира, красивая и комфортная.
+					button.button._transparent Ещё 5 отзывов
+				div.tab__block#leave_feedback
+					form.tab__form
+						label.tab__label(for="feed_name") Ваше имя:
+						input.tab__input#feed_name(type="text" required)
+						br
+						.tab__input-wrap._margr
+							label.tab__label(for="feed_phone") Телефон:
+							input.tab__input.mask_first#feed_phone(type="tel" placeholder="+38 " required)
+							span.tab__line
+							input.tab__input.mask_last(type="tel" required)
+						.tab__input-wrap
+							label.tab__label(for="feed_email") E-mail:
+							input.tab__input#feed_email(type="email" required)
+						.set__rating
+							p.set__title Оценка жилья:
+							.set__text Соответствие фото:
+								.rating
+							.set__text Чистота:
+								.rating
+							.set__text Сервис:
+								.rating
+							.set__text Расположение:
+								.rating
+							.set__text Соотношение цена\качество:
+								.rating
+							.set__total Общий балл: 
+								span.room__rating-number._margl#summ 0
+								.room__rating-block
+									span.room__rating-stars#summ_rating
+						label.tab__label Текст отзыва:
+							textarea.tab__textarea
+						input.modal__checkbox(type="checkbox")
+						label.modal__check-label._width Я подтверждаю, что этот отзыв основан на моих собственных впечатлениях и является моим мнением об этой квартире, у меня нет ни личных, ни деловых связей с этим местом и написание этого отзыва не оплачивается и никаким образом не вознаграждается.
+						br
+						button.button(type="submit") Отправить
+	.same__block
+		.container-fluid
+			h2.title._margb Похожие объявления
+			.enable-today__wrap
+				a.enable-today__item(href="#")
+					.enable-today__inner
+						img.enable-today__image(src="img/content/today1.jpg", alt="")
+						p.enable-today__price 280 грн
+					h3.enable-today__name Презентабельная квартира, центр ул. Саксаганского 19
+					.enable-today__detail
+						span.enable-today__attr._bed 2 кровати
+						span.enable-today__attr._person 4 гостя
+						span.enable-today__attr._feedback 27 отзывов
+				a.enable-today__item(href="#")
+					.enable-today__inner
+						img.enable-today__image(src="img/content/today1.jpg", alt="")
+						p.enable-today__price 80 грн
+					h3.enable-today__name Презентабельная квартира
+					.enable-today__detail
+						span.enable-today__attr._bed 2 кровати
+						span.enable-today__attr._person 4 гостя
+						span.enable-today__attr._feedback 27 отзывов
+				a.enable-today__item(href="#")
+					.enable-today__inner
+						img.enable-today__image(src="img/content/today1.jpg", alt="")
+						p.enable-today__price 2280 грн
+					h3.enable-today__name Презентабельная квартира, центр ул. Саксаганского 19
+					.enable-today__detail
+						span.enable-today__attr._bed 2 кровати
+						span.enable-today__attr._person 4 гостя
+						span.enable-today__attr._feedback 27 отзывов
+				a.enable-today__item._vip(href="#")
+					.enable-today__inner
+						img.enable-today__image(src="img/content/today1.jpg", alt="")
+						p.enable-today__price 280 грн
+					h3.enable-today__name Презентабельная квартира, центр ул. Саксаганского 19
+					.enable-today__detail
+						span.enable-today__attr._bed 2 кровати
+						span.enable-today__attr._person 4 гостя
+						span.enable-today__attr._feedback 27 отзывов
+			.text-center
+				button.button._marg Показать ещё
+	.description__block
+		.container-fluid
+			.social__widgets
+				div#vk_groups
+				.fb-page(data-href="https://www.facebook.com/facebook" data-width="276" data-height="271" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true")
+			.description__inner
+				h1.description__title <strong>КВАРТИРАНТ</strong> - сайт №1 в Украине в сфере посуточной аренды жилья. 
+				p.description__text Здесь Вы можете найти и забронировать нужную вам квартиру в разных уголках Украины напрямую от владельцев с их прямыми контактными данными. Без посредников, без комиссии, без проблем!
+				p.description__follow Следите за нами в соцсетях

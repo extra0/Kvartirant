@@ -1,0 +1,264 @@
+extends _layout
+block content
+	include dropmenu
+	.univ__block
+		.container-fluid
+			.sidebar
+				ul.sidebar__menu-list
+					li.sidebar__menu-item
+						a.sidebar__link(href="#") Мои квартиры
+					li.sidebar__menu-item
+						a.sidebar__link.active(href="#") Профиль
+					li.sidebar__menu-item
+						a.sidebar__link(href="#") Выйти
+				.sidebar__description
+					p.sidebar__description-title С чего начать
+					p.sidebar__text Проект Квартир появился в 2008 году, когда два дизайнера приняли у себя дома троих путешественников. Сейчас миллионы хозяев и гостей создают бесплатные аккаунты на Квартиранте, чтобы сдать или забронировать уникальное жилье по всему миру.
+			.univ__inner
+				h1.univ__title._margb Сдайте свое жилье уже сейчас
+				p.univ__text Заполните формы о вашем сдаваемом жилье или что-то такое по тексту
+				.univ__block-title
+					h2.univ__subtitle._sizeL Описание
+					p.univ__subtitle-text Опишите ваше жильё в общем
+				form.tab__form
+					label.tab__label(for="lk_title") Заголовок объявления:
+					input.tab__input._width#lk_title(maxlength="70" type="text" data-field="item" required)
+					p.counter._title
+						span(data-field="target") 70
+						|  знаков осталось
+					label.tab__label(for="room_descr") Общее описание жилья:
+					textarea.tab__textarea._width#room_descr(maxlength="545" data-field="item_2")
+					p.counter._descr
+						span(data-field="target_2") 545
+						|  знаков осталось
+					.univ__block-title._margt
+						h2.univ__subtitle._sizeL Данные о квартире
+						p.univ__subtitle-text Выберите тип Вашего жилья
+					label.tab__label Тип жилья:
+					ul.room__type-list.list-inline
+						li.room__type-item
+							input.room__type-input._radio#type_room(type="radio" name="house_type" checked)
+							label.room__type-label(for="type_room") Отдельная комната
+								img.room__type-img._room(src="img/bed_radio.png", alt="")
+						li.room__type-item
+							input.room__type-input._radio#type__apart(type="radio" name="house_type")
+							label.room__type-label(for="type__apart") Квартира
+								img.room__type-img._apart(src="img/apart_radio.png", alt="")
+						li.room__type-item
+							input.room__type-input._radio#type__house(type="radio" name="house_type")
+							label.room__type-label(for="type__house") Дом
+								img.room__type-img._house(src="img/house_radio.png", alt="")
+						li.room__type-item
+							input.room__type-input._radio#type__penthouse(type="radio" name="house_type")
+							label.room__type-label(for="type__penthouse") Пентхаус
+								img.room__type-img._pent(src="img/pent_radio.png", alt="")
+					.tab__input-wrap._margr._widthS
+						label.tab__label(for="room_descr") Вместимость жилья:
+						select.tab__select._widthS.select
+							option(value="1") 1 
+							option(value="3") 2 
+							option(value="4") 3
+							option(value="44") 44
+							option(value="11") 55
+					.tab__input-wrap
+						label.tab__label(for="room_descr") Стоимость (за 1 сутки):
+						input.tab__input.price(type="text" maxlength="5")
+					label.tab__label В квартире есть:
+					ul.inner__list.list-inline
+						li.inner__item
+							input.modal__checkbox#option_1(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/fen.png", alt="")
+							label.inner__label(for="option_1") Фен
+						li.inner__item
+							input.modal__checkbox#option_2(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/cooking.png", alt="")
+							label.inner__label(for="option_2") Персональное меню в кафе
+						li.inner__item
+							input.modal__checkbox#option_3(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/wifi.png", alt="")
+							label.inner__label(for="option_3") Беспроводной интернет
+						li.inner__item
+							input.modal__checkbox#option_4(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/door.png", alt="")
+							label.inner__label(for="option_4") Бронированная дверь
+						li.inner__item
+							input.modal__checkbox#option_5(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/parking.png", alt="")
+							label.inner__label(for="option_5") Парковочное место на охраняемой стоянке
+						li.inner__item
+							input.modal__checkbox#option_6(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/acc.png", alt="")
+							label.inner__label(for="option_6") Банные принадлежности
+						li.inner__item
+							input.modal__checkbox#option_1(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/fen.png", alt="")
+							label.inner__label(for="option_1") Фен
+						li.inner__item
+							input.modal__checkbox#option_2(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/cooking.png", alt="")
+							label.inner__label(for="option_2") Персональное меню в кафе
+						li.inner__item
+							input.modal__checkbox#option_3(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/wifi.png", alt="")
+							label.inner__label(for="option_3") Беспроводной интернет
+						li.inner__item
+							input.modal__checkbox#option_4(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/door.png", alt="")
+							label.inner__label(for="option_4") Бронированная дверь
+						li.inner__item
+							input.modal__checkbox#option_5(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/parking.png", alt="")
+							label.inner__label(for="option_5") Парковочное место на охраняемой стоянке
+						li.inner__item
+							input.modal__checkbox#option_6(type="checkbox")
+							div.inner__img-wrap
+								img.inner__img(src="img/acc.png", alt="")
+							label.inner__label(for="option_6") Банные принадлежности
+					label.tab__label Правила проживания:
+					.tab__input-wrap._db
+						p.tab__mini-text Время заселения:
+						select.tab__select._widthM.select
+							option(value="12:00") 12:00 
+							option(value="00:00") 12:20
+							option(value="01:22") 11:00
+							option(value="12:20") 12:20
+							option(value="11:00") 12:20
+					.tab__input-wrap._db
+						p.tab__mini-text Время выселения:
+						select.tab__select._widthM.select
+							option(value="12:00") 12:00 
+							option(value="00:00") 12:20
+							option(value="01:22") 11:00
+							option(value="12:20") 12:20
+							option(value="11:00") 12:20
+						span.tab__text._dib Следующего дня
+					label.tab__mini-text(for="pay_now") Предоплата:
+					input.tab__input._width#pay_now(type="text")
+					p.tab__mini-text(for="pay_now") Залог:
+					input.room__type-input._radio#sure(type="radio" name="zalog" checked)
+					label.tab__label._sizeM(for="sure") Обязательный
+					input.room__type-input._radio#not_sure(type="radio" name="zalog" )
+					label.tab__label._sizeM(for="not_sure") Не обязательный
+					label.tab__mini-text(for="keys") Где можно получить ключи от апартаментов:
+					input.tab__input._width#keys(type="text")
+					p.tab__mini-text(for="pay_now") Круглосуточное поселение:
+					input.room__type-input._radio#hourly_yes(type="radio" name="hourly" checked)
+					label.tab__label._sizeM(for="hourly_yes") Да
+					input.room__type-input._radio#hourly_no(type="radio" name="hourly" )
+					label.tab__label._sizeM(for="hourly_no") Нет
+					p.tab__mini-text(for="pay_now") Оплата карта/наличные:
+					input.room__type-input._radio#cash_yes(type="radio" name="cash" checked)
+					label.tab__label._sizeM(for="cash_yes") Да
+					input.room__type-input._radio#cash_no(type="radio" name="cash" )
+					label.tab__label._sizeM(for="cash_no") Нет
+					label.tab__mini-text(for="age") Возрастное ограничение:
+					input.tab__input._width#age(type="text")
+					.univ__block-title
+						h2.univ__subtitle._sizeL Календарь занятости
+						p.univ__subtitle-text Проставьте даты когда жилье занято, эти даты для пользователя буду не доступны
+					.calendar__slider._full
+					.univ__block-title
+						h2.univ__subtitle._sizeL Место нахождение объекта
+						p.univ__subtitle-text Город, улица, адрес, что рядом, карта
+					.tab__input-wrap
+						label.tab__label Область:
+						select.tab__select._widthL.select
+							option(value="Киевская область") Киевская область
+							option(value="Киевская область") Киевская область
+							option(value="Киевская область") Киевская область
+							option(value="Киевская область") Киевская область
+							option(value="Киевская область") Киевская область
+						label.tab__label Город:
+						select.tab__select._widthL.select
+							option(value="Киев") Киев
+							option(value="Донецк") Донецк
+							option(value="Валуйки") Валуйки
+							option(value="Крыжопль") Крыжопль
+							option(value="Лас-Вегас") Лас-Вегас
+						label.tab__label Район:
+						select.tab__select._widthL.select
+							option(value="Приморский") Приморский
+							option(value="Донецк") Донецк
+							option(value="Валуйки") Валуйки
+							option(value="Крыжопль") Крыжопль
+							option(value="Лас-Вегас") Лас-Вегас
+						label.tab__label Метро:
+						select.tab__select._widthL.select
+							option(value="Центральное") Центральное
+							option(value="Донецк") Донецк
+							option(value="Валуйки") Валуйки
+							option(value="Крыжопль") Крыжопль
+							option(value="Лас-Вегас") Лас-Вегас
+						label.tab__label(for="address") Адрес:
+						input.tab__input._widthfull#address(type="text")
+						label.tab__label(for="near") Что есть рядом:
+						input.tab__input._widthfull#near(type="text")
+					.tab__input-wrap._widthHalf
+						.map__dragger
+							#dragger_map
+							#marker
+						p.tab__text._border
+							span.tab__text-border Вы можете перещать поинтер и указать точное местонахождение объекта
+						a.button._gray(href="#") Добавить
+					.tag__block
+						p.tag__item Продукты 24
+							span.tag__delete
+						p.tag__item Дельфинарий
+							span.tag__delete
+					.univ__block-title
+						h2.univ__subtitle._sizeL Загрузить фото вашего жилья
+						p.univ__subtitle-text Допустимые форматы: jpeg/jpg, png. Макс. размер файла 2 мб
+					.avatar__block
+						.avatar__link-img._width
+							img.avatar__img(src="img/content/img1.jpg", alt="")
+							a.avatar__delete(href="#")
+							p.avatar__text Главная
+						.avatar__link-img._width
+							img.avatar__img(src="img/content/img2.jpg", alt="")
+							a.avatar__delete(href="#")
+							p.avatar__text
+								a.avatar__change-main(href="#") Сделать главной
+						input.avatar__input._file._marg(type="file" data-placeholder="Загрузить ещё" data-browse=" ")
+						.clear
+					.univ__block-title
+						h2.univ__subtitle._sizeL Продвижение Вашего объявления
+						p.univ__subtitle-text Вы можете сделать его ещё более эффективнее и выделить на фоне обычных
+					.object__block._vip
+						img.object__img(src="img/vip_obj.png", alt="")
+						h3.object__title VIP размещение
+						p.object__text В общем каталоге Ваше объявление будет выделено специальной рамкой
+						.object__select._vip
+							input.object__input._radio#vip(type="radio" name="obj" checked)
+							label.object__label(for="vip") Vip на 30 дней | 
+								span.object__price  250 грн
+					.object__block
+						img.object__img(src="img/not_vip_obj.png", alt="")
+						h3.object__title Обычное размещение
+						p.object__text Стандартное объявление без каких-либо отличий от остальных
+						.object__select
+							input.object__input._radio#not_vip(type="radio" name="obj")
+							label.object__label(for="not_vip") 30 дней | 
+								span.object__price Бесплатно
+					p.tab__text._marg Узнать больше о  
+						a.tab__link(href="#") продвижении объявлений
+					button.button(type="submit") Опубликовать
+	.description__block
+		.container-fluid
+			.social__widgets
+				div#vk_groups
+				.fb-page(data-href="https://www.facebook.com/facebook" data-width="276" data-height="271" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true")
+			.description__inner
+				h1.description__title <strong>КВАРТИРАНТ</strong> - сайт №1 в Украине в сфере посуточной аренды жилья. 
+				p.description__text Здесь Вы можете найти и забронировать нужную вам квартиру в разных уголках Украины напрямую от владельцев с их прямыми контактными данными. Без посредников, без комиссии, без проблем!
+				p.description__follow Следите за нами в соцсетях

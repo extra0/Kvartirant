@@ -1,0 +1,171 @@
+.search-main__block
+	form.search-main__form(action="#" method="get")
+		.container-fluid
+			.search-main__select-block
+				select.search-main__select-city.select(data-placeholder="Город" name="city")
+					option(value="")
+					option(value="Харьков") Харьков
+					option(value="Донецк") Донецк
+					option(value="Мариуполь") Мариуполь
+					option(value="Ивано-Франковск") Ивано-Франковск
+					option(value="Днепродзержинск") Днепродзержинск
+				select.search-main__select-area.select(data-placeholder="Район/метро" name="area" disabled)
+					option(value="")
+					option(value="Метро") Метро
+					option(value="Район") Район
+			.search-main__datepicker-block
+				input.search-main__date(type="text")
+				span.search-main__line
+				input.search-main__date(type="text")
+			.search-main__cost-block
+				input.search-main__price(type="text" maxlength="5")
+				span.search-main__line._left
+				input.search-main__price._margin(type="text" maxlength="5")
+				span.search-main__text грн
+			.search-main__show-wrap
+				a.search-main__show(href="#") 
+					span.search-main__border Скрыть параметры
+				span.search-main__arrow._bottom
+			button.button._main-search(type="submit") Найти
+		.settings__block
+			.container-fluid
+				.settings__inner
+					p.settings__title Тип жилья:
+					ul.settings__list.list-inline
+						li.settings__item
+							input.settings__input#room(type="checkbox")
+							label.settings__label(for="room") Комната
+						li.settings__item
+							input.settings__input#apart(type="checkbox")
+							label.settings__label(for="apart") Квартира
+						li.settings__item
+							input.settings__input#house(type="checkbox")
+							label.settings__label(for="house") Дом
+						li.settings__item
+							input.settings__input#penthouse(type="checkbox")
+							label.settings__label(for="penthouse") Пентхаус
+				.settings__inner._absolute
+					p.settings__title Вместимость:
+					select.settings__select.select(name="guests")
+						option(value="1") 1
+						option(value="2") 2
+						option(value="3") 3
+						option(value="3") 30
+					span.settings__text гостя
+				.settings__inner
+					p.settings__title Удобства:
+					ul.settings__list.list-inline
+						li.settings__item._width
+							input.settings__input#bedroom(type="checkbox")
+							label.settings__label._size-m(for="bedroom") Туалетные пренадл.
+						li.settings__item._width
+							input.settings__input#kichen(type="checkbox")
+							label.settings__label._size-m(for="kichen") Кухня
+						li.settings__item._width
+							input.settings__input#gas(type="checkbox")
+							label.settings__label._size-m(for="gas") Газовая плита
+						li.settings__item._width
+							input.settings__input#balkon(type="checkbox")
+							label.settings__label._size-m(for="balkon") Терасса/Балкон
+						li.settings__item._width
+							input.settings__input#smoke(type="checkbox")
+							label.settings__label._size-m(for="smoke") Датчик дыма
+						li.settings__item._width
+							input.settings__input#fen(type="checkbox")
+							label.settings__label._size-m(for="fen") Фен
+						li.settings__item._width
+							input.settings__input#parking(type="checkbox")
+							label.settings__label._size-m(for="parking") Бесплатная парковка
+						li.settings__item._width
+							input.settings__input#armor(type="checkbox")
+							label.settings__label._size-m(for="armor") Бронированная дверь
+						li.settings__item._width
+							input.settings__input#wifi(type="checkbox")
+							label.settings__label._size-m(for="wifi") Интернет/Wi-fi
+						li.settings__item._width
+							input.settings__input#djakuzi(type="checkbox")
+							label.settings__label._size-m(for="djakuzi") Джакузи
+						li.settings__item._width
+							input.settings__input#tv(type="checkbox")
+							label.settings__label._size-m(for="tv") Телевизор
+						li.settings__item._width
+							input.settings__input#conditioner(type="checkbox")
+							label.settings__label._size-m(for="conditioner") Кондиционер
+						li.settings__item._width
+							input.settings__input#dryer(type="checkbox")
+							label.settings__label._size-m(for="dryer") Сушильная машина
+						li.settings__item._width
+							input.settings__input#kamin(type="checkbox")
+							label.settings__label._size-m(for="kamin") Камин
+						li.settings__item._width
+							input.settings__input#fitnes(type="checkbox")
+							label.settings__label._size-m(for="fitnes") Спортзал
+						li.settings__item._width
+							input.settings__input#heating(type="checkbox")
+							label.settings__label._size-m(for="heating") Отопление
+						li.settings__item._width
+							input.settings__input#wash(type="checkbox")
+							label.settings__label._size-m(for="wash") Стиральная машина
+						li.settings__item._width
+							input.settings__input#catv(type="checkbox")
+							label.settings__label._size-m(for="catv") Кабельное телевидение
+						li.settings__item._width
+							input.settings__input#domofon(type="checkbox")
+							label.settings__label._size-m(for="domofon") Домофон
+						li.settings__item._width
+							input.settings__input#extinguisher(type="checkbox")
+							label.settings__label._size-m(for="extinguisher") Огнетушитель
+						li.settings__item._width
+							input.settings__input#lift(type="checkbox")
+							label.settings__label._size-m(for="lift") Лифт
+						li.settings__item._width
+							input.settings__input#medic(type="checkbox")
+							label.settings__label._size-m(for="medic") Аптечка
+						li.settings__item._width
+							input.settings__input#breakfast(type="checkbox")
+							label.settings__label._size-m(for="breakfast") Завтрак
+						li.settings__item._width
+							input.settings__input#pool(type="checkbox")
+							label.settings__label._size-m(for="pool") Бассейн
+				.settings__inner._width
+					p.settings__title Правила:
+					ul.settings__list.list-inline
+						li.settings__item._noimg
+							input.settings__input._noimg#docs(type="checkbox")
+							label.settings__label._size-m._noimg(for="docs") Отчетные документы 
+						li.settings__item._noimg
+							input.settings__input._noimg#animals(type="checkbox")
+							label.settings__label._size-m._noimg(for="animals") Можно с питомцами
+						li.settings__item._noimg
+							input.settings__input._noimg#transfer(type="checkbox")
+							label.settings__label._size-m._noimg(for="transfer") Трансфер
+						li.settings__item._noimg
+							input.settings__input._noimg#transfer2(type="checkbox")
+							label.settings__label._size-m._noimg(for="transfer2") Трансфер
+						li.settings__item._noimg
+							input.settings__input._noimg#cart(type="checkbox")
+							label.settings__label._size-m._noimg(for="cart") Оплата картой
+						li.settings__item._noimg
+							input.settings__input._noimg#nocash(type="checkbox")
+							label.settings__label._size-m._noimg(for="nocash") Без предоплаты
+						li.settings__item._noimg
+							input.settings__input._noimg#allday(type="checkbox")
+							label.settings__label._size-m._noimg(for="allday") Круглосуточное поселение
+						li.settings__item._noimg
+							input.settings__input._noimg#allday2(type="checkbox")
+							label.settings__label._size-m._noimg(for="allday2") Круглосуточное поселение
+						li.settings__item._noimg
+							input.settings__input._noimg#smoke(type="checkbox")
+							label.settings__label._size-m._noimg(for="smoke") Можно курить 
+						li.settings__item._noimg
+							input.settings__input._noimg#nogift(type="checkbox")
+							label.settings__label._size-m._noimg(for="nogift") Без залога
+						li.settings__item._noimg
+							input.settings__input._noimg#pay(type="checkbox")
+							label.settings__label._size-m._noimg(for="pay") Оплата на расчетный счет
+						li.settings__item._noimg
+							input.settings__input._noimg#pay2(type="checkbox")
+							label.settings__label._size-m._noimg(for="pay2") Оплата на расчетный счет
+				button.button._absolute(type="submit") Найти
+	div.text-center
+		a.search-main__detail-search(href="#") Расширенный поиск
