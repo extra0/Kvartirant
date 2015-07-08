@@ -292,7 +292,8 @@ $(document).ready(function() {
   function init () {
       var map = new ymaps.Map('dragger_map', {
               center: [55.819543, 37.611619],
-              zoom: 10
+              zoom: 10,
+              controls: ['zoomControl']
           }, {
               searchControlProvider: 'yandex#search'
           }),
@@ -373,6 +374,7 @@ $(document).ready(function() {
           return point[0] >= bounds[0][0] && point[0] <= bounds[1][0] &&
                  point[1] >= bounds[0][1] && point[1] <= bounds[1][1];
       }
+      myMap.behaviors.disable('scrollZoom');
   }
 
 });
