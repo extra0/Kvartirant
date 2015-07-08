@@ -637,7 +637,7 @@ slick slider
 					'width': width,
 					'background-position': 'left center'
 				});
-				self.vote_success.html(score);
+				// self.vote_success.html(score);
 			}).bind('mouseout', function() {
 				if (self.options.readOnly) return;
 				// self.reset();
