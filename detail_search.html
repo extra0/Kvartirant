@@ -280,7 +280,21 @@
       </div>
       <div class="enable-today__block">
         <div class="container-fluid">
-          <div class="map__block _hidden"><a href="#" class="map__button _hidden">Показать карту</a>
+          <div class="map__block _hidden">
+            <script>
+              $(document).ready(function(){
+              	var myMap;
+              	ymaps.ready(init);
+              	function init() {
+              	myMap = new ymaps.Map('map', {
+              		center: [55.76, 37.64],
+              		zoom: 10,
+              		controls: ['zoomControl']
+              	});
+              	myMap.behaviors.disable('scrollZoom');
+              	}
+              });
+            </script><a href="#" class="map__button _hidden">Показать карту</a>
             <div id="map"></div>
           </div>
           <div class="sorting__block">

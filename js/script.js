@@ -285,7 +285,7 @@ $(document).ready(function() {
 
 
   // яндекс карта с драгером
-  jQuery(function () {
+  $(function () {
       ymaps.ready(init);
   });
 
@@ -294,10 +294,11 @@ $(document).ready(function() {
               center: [55.819543, 37.611619],
               zoom: 10,
               controls: ['zoomControl']
+
           }, {
               searchControlProvider: 'yandex#search'
           }),
-          markerElement = jQuery('#marker'),
+          markerElement = $('#marker'),
           dragger = new ymaps.util.Dragger({
               // Драггер будет автоматически запускаться при нажатии на элемент 'marker'.
               autoStartElement: markerElement[0]
@@ -351,7 +352,7 @@ $(document).ready(function() {
           if (containsPoint(mapGlobalPixelBounds, markerGlobalPosition)) {
               // Теперь переводим глобальные пиксельные координаты в геокоординаты с учетом текущего уровня масштабирования карты.
               var geoPosition = map.options.get('projection').fromGlobalPixels(markerGlobalPosition, map.getZoom());
-              // alert(geoPosition.join(' '));
+              alert(geoPosition.join(' '));
           }
       }
 
@@ -374,7 +375,7 @@ $(document).ready(function() {
           return point[0] >= bounds[0][0] && point[0] <= bounds[1][0] &&
                  point[1] >= bounds[0][1] && point[1] <= bounds[1][1];
       }
-      myMap.behaviors.disable('scrollZoom');
+      map.behaviors.disable('scrollZoom');
   }
 
 });

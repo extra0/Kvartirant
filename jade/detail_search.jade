@@ -4,6 +4,19 @@ block content
 	.enable-today__block
 		.container-fluid
 			.map__block._hidden
+				script.
+					$(document).ready(function(){
+						var myMap;
+						ymaps.ready(init);
+						function init() {
+						myMap = new ymaps.Map('map', {
+							center: [55.76, 37.64],
+							zoom: 10,
+							controls: ['zoomControl']
+						});
+						myMap.behaviors.disable('scrollZoom');
+						}
+					});
 				a.map__button._hidden(href="#") Показать карту
 				#map
 			.sorting__block
