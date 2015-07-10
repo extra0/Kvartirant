@@ -1456,33 +1456,66 @@
 		padding: 26px 0;
 	}
 	&__list {
-		width: 85%;
-		margin: 19px 0 -7px 0;
+		margin: 19px 0 23px 0;
 	}
 	&__item {
 		margin: 17px 0;
-		width: 30%;
+		width: 32%;
 		vertical-align: top;
 		position: relative;
 		&._no {
 			opacity: 0.5;
-			span {
+			.inset__text {
 				text-decoration: line-through;
 			}
 		}
 	}
 	&__img {
 		position: absolute;
-		top: 0;
-		left: 0;
+		top: -16px;
+		left: -10px;
+		width: 57px;
+		height: 57px;
+		background: url(../img/dark_sprite.png) 0 -16px no-repeat;
+		&._left {
+			left: 26px;
+		}
+
+		&._kichen-set {background-position: -98px -16px; }
+		&._gas-set {background-position: -218px -16px; }
+		&._balkon-set {background-position: -333px -16px; }
+		&._smoke-set {background-position: -450px -16px; }
+		&._fen-set {background-position: 0px -91px; }
+		&._parking-set {background-position: -98px -91px; }
+		&._armor-set {background-position: -218px -91px; }
+		&._wifi-set {background-position: -333px -91px; }
+		&._djakuzi-set {background-position: -450px -91px; }
+		&._tv-set {background-position: 0px -164px; }
+		&._conditioner-set {background-position:  -98px -164px; }
+		&._dryer-set {background-position:  -218px -164px; }
+		&._kamin-set {background-position:  -333px -164px; }
+		&._fitnes-set {background-position: -450px -164px; }
+		&._heating-set {background-position: 0px -238px; }
+		&._wash-set {background-position: -98px -238px; }
+		&._catv-set {background-position: -218px -238px; }
+		&._domofon-set {background-position: -333px -238px; }
+		&._extinguisher-set {background-position: -450px -238px; }
+		&._lift-set {background-position: 0px -312px; }
+		&._medic-set {background-position: -98px -312px; }
+		&._breakfast-set {background-position: -218px -312px; }
+		&._pool-set {background-position: -333px -312px; }
 	}
 	&__text {
 		display: inline-block;
 		vertical-align: middle;
 		width: 56%;
 		line-height: 17px;
-		margin-left: 47px;
+		margin-left: 58px;
 		color: #59595a;
+		&._sizeS {
+			font-size: 12px;
+			margin-left: 66px;
+		}
 	}
 }
 .rules {
