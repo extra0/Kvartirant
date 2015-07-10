@@ -2,10 +2,11 @@ header.header
 	.container-fluid
 		div.enter__block
 			a.enter__link.modal(href="#enter") Войти
-			// Активируем когда пользователь залогинен
-			// a.enter__link._withImg(href="#") 
-			// 	img.enter__img(src="img/content/cat1.jpg", alt="")
-			// 	span.enter__name Иван
+			// если залогинен
+				<a href="#" class="enter__link _withImg"> 
+					<img src="img/content/cat1.jpg" alt="" class="enter__img">
+					<span class="enter__name">Иван</span>
+				</a>
 			a.enter__rent(href="#") Сдать квартиру
 		a.header__logo(href="/")
 			img(src="img/logo.png" alt="Site Logo")
