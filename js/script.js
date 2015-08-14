@@ -96,12 +96,10 @@ $(document).ready(function() {
         dates.splice(index, 1);
         td.removeClass('ui-state-busy');
         $('.calendar__date').attr('data-date', dates);
-        console.log($('.calendar__date').attr('data-date', dates));
       } else {
         dates.push(a);
         td.addClass('ui-state-busy');
         $('.calendar__date').attr('data-date', dates);
-        console.log($('.calendar__date').attr('data-date', dates));
       }
     }
   });
