@@ -53,8 +53,8 @@ $(document).ready(function() {
 
   var dates = [""];
 
-  function addZero(date){
-      return date >9 ? date : '0'+date;
+  function addZero(date) {
+    return date > 9 ? date : '0' + date;
   }
 
   // дата на странице комнаты
@@ -75,30 +75,35 @@ $(document).ready(function() {
     numberOfMonths: 2,
     minDate: "0",
     firstDay: 1,
-        beforeShowDay: function (date){ 
-            var day = addZero(date.getDate());
-            var month = addZero(date.getMonth());            
-            var d = date.getFullYear()+"-"+month+"-"+day ;
-            if ( dates.indexOf(d) >= 0 ){ 
-                return [true,"ui-state-busy"];         
-            }    
-            return [true,""]; 
-        },
-        onSelect:function(date, init){
-            var td = init.dpDiv.find('a.ui-state-hover').parent('td');
-            var d = new Date(date);
-            var day = addZero(d.getDate());
-            var month = addZero(d.getMonth());
-            var a = d.getFullYear()+"-"+month+"-"+day;
-            var index = dates.indexOf(a);
-            if ( index >= 0 ){            
-                dates.splice(index, 1);
-                td.removeClass('ui-state-busy');
-            } else {
-               dates.push(a);
-               td.addClass('ui-state-busy');
-            }
-        }
+    beforeShowDay: function(date) {
+      var day = addZero(date.getDate());
+      var month = addZero(date.getMonth());
+      var d = date.getFullYear() + "-" + month + "-" + day;
+      if (dates.indexOf(d) >= 0) {
+        return [true, "ui-state-busy"];
+      }
+      return [true, ""];
+    },
+    onSelect: function(date, init) {
+      var td = init.dpDiv.find('a.ui-state-hover').parent('td');
+      var d = new Date(date);
+      var day = addZero(d.getDate());
+      var month = addZero(d.getMonth());
+      var a = d.getFullYear() + "-" + month + "-" + day;
+      var index = dates.indexOf(a);
+      var arr = [ ];
+      if (index >= 0) {
+        dates.splice(index, 1);
+        td.removeClass('ui-state-busy');
+        $('.calendar__date').attr('data-date', dates);
+        console.log($('.calendar__date').attr('data-date', dates));
+      } else {
+        dates.push(a);
+        td.addClass('ui-state-busy');
+        $('.calendar__date').attr('data-date', dates);
+        console.log($('.calendar__date').attr('data-date', dates));
+      }
+    }
   });
 
   // кастомизация селекта
@@ -160,7 +165,7 @@ $(document).ready(function() {
   });
 
   // карта
-  
+
 
 
   // вызов слайдера на старнице апартаментов
@@ -238,21 +243,21 @@ $(document).ready(function() {
   $(document).on('click', '.question__link', function(e) {
     e.preventDefault();
     var $self = $(this),
-        $li = $self.closest('div');
+      $li = $self.closest('div');
     $li.find('.question__answer').stop(true, false).slideToggle(); //запрет на очередь повторений
     return false;
   });
 
   //  добавляем номер телефона в профиле
   var i = 1;
-  $('.tab__add-number').click(function(){
-    $(this).before('<div class="tab__input-wrap" style="display: block;"><input id="feed_phone" type="tel" placeholder="+38 " name="phone-'+ i + '" required="" class="tab__input mask_first"><span class="tab__line"></span><input type="tel" name="subphone-'+ i +'" required="" class="tab__input mask_last " style="  margin-left: 5px;"><span class="close"></span></div>');
-    ++ i;
+  $('.tab__add-number').click(function() {
+    $(this).before('<div class="tab__input-wrap" style="display: block;"><input id="feed_phone" type="tel" placeholder="+38 " name="phone-' + i + '" required="" class="tab__input mask_first"><span class="tab__line"></span><input type="tel" name="subphone-' + i + '" required="" class="tab__input mask_last " style="  margin-left: 5px;"><span class="close"></span></div>');
+    ++i;
     $('.mask_first').mask('+38 999');
     $('.mask_last').mask('999 99 99');
 
     // удаляем не нужный телефон в профиле
-    $('.close').click(function(){
+    $('.close').click(function() {
       $(this).parent().remove();
       return false;
     });
@@ -260,133 +265,144 @@ $(document).ready(function() {
   });
 
   // удаляем не нужную фото в профиле и теги в добавлении комнаты
-  $('.close, .tag__delete').click(function(){$(this).parent().remove();});
+  $('.close, .tag__delete').click(function() {
+    $(this).parent().remove();
+  });
 
   // удаляем ненужные объявления в личном кабинете
-  $('._del').click(function(){$(this).parent().parent().parent().remove();return false;});
- 
+  $('._del').click(function() {
+    $(this).parent().parent().parent().remove();
+    return false;
+  });
+
   //подсчет символов в input
-  $(function () {
+  $(function() {
     var target = $('[data-field="target"]');
-    $(document).on('input', '[data-field="item"]', function () {
+    $(document).on('input', '[data-field="item"]', function() {
       var item = $(this);
-      target.html(70-item.val().length);
+      target.html(70 - item.val().length);
     });
   });
 
   //подсчет символов в текстареи
-  $(function () {
+  $(function() {
     var target = $('[data-field="target_2"]');
-    $(document).on('input', '[data-field="item_2"]', function () {
+    $(document).on('input', '[data-field="item_2"]', function() {
       var item = $(this);
-      target.html(545-item.val().length);
+      target.html(545 - item.val().length);
     });
   });
 
   // поделиться 
   (function() {
-    if (window.pluso)if (typeof window.pluso.start == "function") return;
-    if (window.ifpluso==undefined) { window.ifpluso = 1;
-      var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-      s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-      s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-      var h=d[g]('body')[0];
+    if (window.pluso)
+      if (typeof window.pluso.start == "function") return;
+    if (window.ifpluso == undefined) {
+      window.ifpluso = 1;
+      var d = document,
+        s = d.createElement('script'),
+        g = 'getElementsByTagName';
+      s.type = 'text/javascript';
+      s.charset = 'UTF-8';
+      s.async = true;
+      s.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://share.pluso.ru/pluso-like.js';
+      var h = d[g]('body')[0];
       h.appendChild(s);
-    }})();
-
+    }
+  })();
 
   // яндекс карта с драгером
-  $(function () {
-      ymaps.ready(init);
+  $(function() {
+    ymaps.ready(init);
   });
 
-  function init () {
-      var map = new ymaps.Map('dragger_map', {
-              center: [55.819543, 37.611619],
-              zoom: 10,
-              controls: ['zoomControl']
+  function init() {
+    var map = new ymaps.Map('dragger_map', {
+        center: [55.819543, 37.611619],
+        zoom: 10,
+        controls: ['zoomControl']
 
-          }, {
-              searchControlProvider: 'yandex#search'
-          }),
-          markerElement = $('#marker'),
-          dragger = new ymaps.util.Dragger({
-              // Драггер будет автоматически запускаться при нажатии на элемент 'marker'.
-              autoStartElement: markerElement[0]
-          }),
-          // Смещение маркера относительно курсора.
-          markerOffset,
-          markerPosition;
+      }, {
+        searchControlProvider: 'yandex#search'
+      }),
+      markerElement = $('#marker'),
+      dragger = new ymaps.util.Dragger({
+        // Драггер будет автоматически запускаться при нажатии на элемент 'marker'.
+        autoStartElement: markerElement[0]
+      }),
+      // Смещение маркера относительно курсора.
+      markerOffset,
+      markerPosition;
 
-      dragger.events
-          .add('start', onDraggerStart)
-          .add('move', onDraggerMove)
-          .add('stop', onDraggerEnd);
+    dragger.events
+      .add('start', onDraggerStart)
+      .add('move', onDraggerMove)
+      .add('stop', onDraggerEnd);
 
-      function onDraggerStart(event) {   
-          var offset = markerElement.offset(),
-              position = event.get('position');
-          // Сохраняем смещение маркера относительно точки начала драга.  
-          markerOffset = [
-              position[0] - offset.left,
-              position[1] - offset.top
-          ];
-          markerPosition = [
-              position[0] - markerOffset[0],
-              position[1] - markerOffset[1]
-          ];
+    function onDraggerStart(event) {
+      var offset = markerElement.offset(),
+        position = event.get('position');
+      // Сохраняем смещение маркера относительно точки начала драга.  
+      markerOffset = [
+        position[0] - offset.left,
+        position[1] - offset.top
+      ];
+      markerPosition = [
+        position[0] - markerOffset[0],
+        position[1] - markerOffset[1]
+      ];
 
-          applyMarkerPosition();
+      applyMarkerPosition();
+    }
+
+    function onDraggerMove(event) {
+      applyDelta(event);
+    }
+
+    function onDraggerEnd(event) {
+      applyDelta(event);
+      markerPosition[0] += markerOffset[0];
+      markerPosition[1] += markerOffset[1];
+      // Переводим координаты страницы в глобальные пиксельные координаты.
+      var markerGlobalPosition = map.converter.pageToGlobal(markerPosition),
+        // Получаем центр карты в глобальных пиксельных координатах.
+        mapGlobalPixelCenter = map.getGlobalPixelCenter(),
+        // Получением размер контейнера карты на странице.
+        mapContainerSize = map.container.getSize(),
+        mapContainerHalfSize = [mapContainerSize[0] / 2, mapContainerSize[1] / 2],
+        // Вычисляем границы карты в глобальных пиксельных координатах.
+        mapGlobalPixelBounds = [
+          [mapGlobalPixelCenter[0] - mapContainerHalfSize[0], mapGlobalPixelCenter[1] - mapContainerHalfSize[1]],
+          [mapGlobalPixelCenter[0] + mapContainerHalfSize[0], mapGlobalPixelCenter[1] + mapContainerHalfSize[1]]
+        ];
+      // Проверяем, что завершение работы драггера произошло в видимой области карты.
+      if (containsPoint(mapGlobalPixelBounds, markerGlobalPosition)) {
+        // Теперь переводим глобальные пиксельные координаты в геокоординаты с учетом текущего уровня масштабирования карты.
+        var geoPosition = map.options.get('projection').fromGlobalPixels(markerGlobalPosition, map.getZoom());
+        alert(geoPosition.join(' '));
       }
+    }
 
-      function onDraggerMove(event) {
-          applyDelta(event);
-      }
+    function applyDelta(event) {
+      // Поле 'delta' содержит разницу между положениями текущего и предыдущего события драггера.
+      var delta = event.get('delta');
+      markerPosition[0] += delta[0];
+      markerPosition[1] += delta[1];
+      applyMarkerPosition();
+    }
 
-      function onDraggerEnd(event) {
-          applyDelta(event);
-          markerPosition[0] += markerOffset[0];
-          markerPosition[1] += markerOffset[1];
-          // Переводим координаты страницы в глобальные пиксельные координаты.
-          var markerGlobalPosition = map.converter.pageToGlobal(markerPosition),
-              // Получаем центр карты в глобальных пиксельных координатах.
-              mapGlobalPixelCenter = map.getGlobalPixelCenter(),
-              // Получением размер контейнера карты на странице.
-              mapContainerSize = map.container.getSize(),
-              mapContainerHalfSize = [mapContainerSize[0] / 2, mapContainerSize[1] / 2],
-              // Вычисляем границы карты в глобальных пиксельных координатах.
-              mapGlobalPixelBounds = [
-                  [mapGlobalPixelCenter[0] - mapContainerHalfSize[0], mapGlobalPixelCenter[1] - mapContainerHalfSize[1]],
-                  [mapGlobalPixelCenter[0] + mapContainerHalfSize[0], mapGlobalPixelCenter[1] + mapContainerHalfSize[1]]
-              ];
-          // Проверяем, что завершение работы драггера произошло в видимой области карты.
-          if (containsPoint(mapGlobalPixelBounds, markerGlobalPosition)) {
-              // Теперь переводим глобальные пиксельные координаты в геокоординаты с учетом текущего уровня масштабирования карты.
-              var geoPosition = map.options.get('projection').fromGlobalPixels(markerGlobalPosition, map.getZoom());
-              alert(geoPosition.join(' '));
-          }
-      }
+    function applyMarkerPosition() {
+      markerElement.css({
+        left: markerPosition[0],
+        top: markerPosition[1]
+      });
+    }
 
-      function applyDelta (event) {
-          // Поле 'delta' содержит разницу между положениями текущего и предыдущего события драггера.
-          var delta = event.get('delta');
-          markerPosition[0] += delta[0];
-          markerPosition[1] += delta[1];
-          applyMarkerPosition();
-      }
-
-      function applyMarkerPosition () {
-          markerElement.css({
-              left: markerPosition[0],
-              top: markerPosition[1]
-          });
-      }
-
-      function containsPoint (bounds, point) {
-          return point[0] >= bounds[0][0] && point[0] <= bounds[1][0] &&
-                 point[1] >= bounds[0][1] && point[1] <= bounds[1][1];
-      }
-      map.behaviors.disable('scrollZoom');
+    function containsPoint(bounds, point) {
+      return point[0] >= bounds[0][0] && point[0] <= bounds[1][0] &&
+        point[1] >= bounds[0][1] && point[1] <= bounds[1][1];
+    }
+    map.behaviors.disable('scrollZoom');
   }
 
 });
