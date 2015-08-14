@@ -44,6 +44,20 @@
         </form>
       </div>
     </div>
+    <div id="write_message">
+      <div class="modal__header">
+        <h3 class="modal__title">Написать сообщение</h3>
+      </div>
+      <div class="modal__inner">
+        <form class="modal__form">
+          <label for="name" class="modal__label">Вашe имя:</label>
+          <input id="name" type="name" required class="modal__input">
+          <label for="message" class="modal__label">Вашe сообщение:</label>
+          <textarea id="message" class="modal__message"></textarea>
+          <button type="submit" class="button">Отправить</button>
+        </form>
+      </div>
+    </div>
     <div class="main-wrapper">
       <header class="header">
         <div class="container-fluid">
@@ -292,12 +306,14 @@
               <p class="room__person-info">На сайте с янв. 2015</p>
               <p class="room__person-info">Разместил 1 объявление</p>
               <p class="room__attention">Если вам понравилось жилье,<br>свяжитесь с владельцем:</p>
-              <p class="room__number">+38 09x xxx xxxx</p><a href="#" class="room__show-number">Показать телефон</a><br><a href="#" class="room__write-letter">Написать сообщение</a>
+              <p class="room__number">+38 09x xxx xxxx</p><a href="#" class="room__show-number">Показать телефон</a><br><a href="#write_message" class="room__write-letter modal">Написать сообщение</a>
               <p class="room__feedback">Люди оставили <a href="#" class="room__feedback-number">41 отзыв</a></p>
               <p class="room__rating-title">Средняя оценка:</p><span class="room__rating-number">3,8</span>
               <div class="room__rating-block"><span class="room__rating-stars"> </span></div>
             </div>
-            <div class="room__info-footer"><span class="room__share-text">Поделиться:</span><a href="#" class="room__share-link _vk"></a><a href="#" class="room__share-link _fb"></a><a href="#" class="room__share-link _tw"></a></div>
+            <div class="room__info-footer"><span class="room__share-text">Поделиться:</span>
+              <div data-background="transparent" data-options="small,square,line,horizontal,nocounter,theme=06" data-services="vkontakte,facebook,twitter" class="pluso"></div>
+            </div>
           </div>
           <div class="room__slider">
             <div class="slider-for">

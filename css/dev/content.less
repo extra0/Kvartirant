@@ -492,6 +492,7 @@
 		display: block;
 		margin-bottom: 8px;
 	}
+	&__message,
 	&__input {
 		.border-rad;
 		border: 1px solid #b7b7bc;
@@ -503,6 +504,11 @@
 		height: 38px;
 		outline: none;
 		box-shadow: 3px 3px #dbdbdb;
+	}
+	&__message {
+		height: 150px;
+		resize: none;
+		padding: 10px;
 	}
 	&__checkbox {
 		&.jq-checkbox {
@@ -616,6 +622,25 @@
 			margin: 0 10px 0 0;
 		}
 	}
+}
+// модальное написать сообщение владельцу
+#write_message {
+	display: none;
+	background: #fff;
+	border-radius: 6px;
+	padding-bottom: 20px;
+}
+
+// блок поделиться
+.pluso {
+	position: relative;
+	top: 5px;
+}
+.pluso-more {
+	display: none!important;
+}
+.pluso-wrap a {
+	margin: 3px 5px 0 3px!important;
 }
 
 // универсальная кнопка

@@ -20,7 +20,7 @@ block content
 					p.room__number +38 09x xxx xxxx
 					a.room__show-number(href="#") Показать телефон
 					br
-					a.room__write-letter(href="#") Написать сообщение
+					a.room__write-letter.modal(href="#write_message") Написать сообщение
 					p.room__feedback Люди оставили 
 						a.room__feedback-number(href="#") 41 отзыв
 					p.room__rating-title Средняя оценка:
@@ -29,9 +29,10 @@ block content
 						span.room__rating-stars 
 				.room__info-footer
 					span.room__share-text Поделиться:
-					a.room__share-link._vk(href="#")
-					a.room__share-link._fb(href="#")
-					a.room__share-link._tw(href="#")
+					.pluso(data-background="transparent" data-options="small,square,line,horizontal,nocounter,theme=06" data-services="vkontakte,facebook,twitter")
+					//- a.room__share-link._vk(href="#")
+					//- a.room__share-link._fb(href="#")
+					//- a.room__share-link._tw(href="#")
 			.room__slider
 				.slider-for
 					div.slide__block

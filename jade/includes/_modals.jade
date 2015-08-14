@@ -20,3 +20,13 @@
 				a.m-social__link._vk(href="#")
 				a.m-social__link._fb(href="#")
 			a.modal__resolution(href="#") Условия предоставления услуг
+#write_message
+	.modal__header
+		h3.modal__title Написать сообщение
+	.modal__inner
+		form.modal__form
+			label.modal__label(for="name") Вашe имя:
+			input.modal__input#name(type="name" required)
+			label.modal__label(for="message") Вашe сообщение:
+			textarea.modal__message#message
+			button.button(type="submit") Отправить
